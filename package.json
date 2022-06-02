@@ -1,0 +1,48 @@
+{
+  "name": "blockhaus-starter",
+  "version": "1.0.0",
+  "description": "Starter hybrid theme with bundled block patterns and easy to transform to FSE.",
+  "author": "Alastair Cox",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "WordPress",
+    "Theme"
+  ],
+  "homepage": "https://github.com/Automattic/_s#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Automattic/_s.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Automattic/_s/issues"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.2",
+    "@wordpress/scripts": "^19.2.2",
+    "autoprefixer": "^10.4.7",
+    "dir-archiver": "^1.1.1",
+    "node-sass": "^7.0.1",
+    "postcss": "^8.4.13",
+    "rtlcss": "^3.5.0",
+    "tailwindcss": "^3.0.24"
+  },
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": true,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": []
+    },
+    "plugins": [],
+    "map": false
+  },
+  "scripts": {
+    "dev": "tailwindcss -i ./styles/tailwind.css -o ./styles/style.css --postcss",
+    "watch": "tailwindcss -i ./styles/tailwind.css -o ./styles/style.css --postcss --watch",
+    "lint:js": "wp-scripts lint-js 'js/*.js'",
+    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+  }
+}

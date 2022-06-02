@@ -1,0 +1,256 @@
+{
+  "version": 2,
+  "settings": {
+    "color": {
+      "defaultPalette": false,
+      "palette": [
+        {
+          "slug": "primary-default",
+          "color": "rgba(255 255 255 / 1)",
+          "name": "Primary"
+        },
+        {
+          "slug": "primary-offset",
+          "color": "rgba(253 224 71 / 1)",
+          "name": "Primary Offset"
+        },
+        {
+          "slug": "secondary",
+          "color": "rgba(50 64 64 / 1)",
+          "name": "Secondary"
+        },
+        {
+          "slug": "accent",
+          "color": "rgba(110 231 183 / 1)",
+          "name": "Accent"
+        },
+        {
+          "slug": "highlight",
+          "color": "rgba(37 99 235 / 1)",
+          "name": "Highlight"
+        },
+        {
+          "slug": "neutral-light-900",
+          "color": "rgba(200 200 200 / 1)",
+          "name": "Neutral Light (900)"
+        },
+        {
+          "slug": "neutral-light-500",
+          "color": "rgba(212 212 212 / 1)",
+          "name": "Neutral Lighter (500)"
+        },
+        {
+          "slug": "neutral-light-100",
+          "color": "rgba(244 244 244 / 1)",
+          "name": "Neutral Lightest (100)"
+        },
+        {
+          "slug": "neutral-dark-100",
+          "color": "rgba(35 41 41 / 1)",
+          "name": "Neutral Dark (100)"
+        },
+        {
+          "slug": "neutral-dark-500",
+          "color": "rgba(3 3 3 / 1)",
+          "name": "Neutral Darker (500)"
+        },
+        {
+          "slug": "neutral-dark-900",
+          "color": "rgba(0 0 0 / 1)",
+          "name": "Neutral Darkest (900)"
+        }
+      ],
+      "custom": false,
+      "customGradient": false
+    },
+    "custom": {
+      "spacing": {
+        "baseline": "1.5rem"
+      }
+    },
+    "typography": {
+      "customFontSize": false,
+      "lineHeight": true,
+      "dropCap": false,
+      "fontFamilies": [
+        {
+          "fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
+          "slug": "system-fonts",
+          "name": "System Fonts"
+        },
+        {
+          "fontFamily": "Montserrat, sans-serif",
+          "slug": "montserrat",
+          "name": "Sans serif",
+          "fontFace": [
+            {
+              "fontFamily": "Montserrat",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "src": ["file:./assets/fonts/Montserrat-Regular.woff"]
+            },
+            {
+              "fontFamily": "Montserrat",
+              "fontWeight": "800",
+              "fontStyle": "normal",
+              "src": ["file:./assets/fonts/Montserrat-Bold.woff"]
+            },
+            {
+              "fontFamily": "Montserrat",
+              "fontWeight": "400",
+              "fontStyle": "italic",
+              "src": ["file:./assets/fonts/Montserrat-Italic.woff"]
+            },
+            {
+              "fontFamily": "Montserrat",
+              "fontWeight": "800",
+              "fontStyle": "italic",
+              "src": ["file:./assets/fonts/Montserrat-BoldItalic.woff"]
+            }
+          ]
+        },
+        {
+          "fontFamily": "Merriweather, Cambria, Georgia, serif",
+          "slug": "serif",
+          "name": "Serif",
+          "fontFace": [
+            {
+              "fontFamily": "Merriweather",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "src": ["file:./assets/fonts/merriweather-v30-latin-regular.woff"]
+            },
+            {
+              "fontFamily": "Merriweather",
+              "fontWeight": "900",
+              "fontStyle": "normal",
+              "src": ["file:./assets/fonts/merriweather-v30-latin-900.woff"]
+            }
+          ]
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "tiny",
+          "size": "clamp(0.56rem, calc(0.50rem + 0.31vw), 0.72rem)",
+          "name": "Tiny"
+        },
+        {
+          "slug": "small",
+          "size": "clamp(0.70rem, calc(0.62rem + 0.39vw), 0.90rem)",
+          "name": "Small"
+        },
+        {
+          "slug": "normal",
+          "size": "clamp(0.88rem, calc(0.78rem + 0.49vw), 1.13rem)",
+          "name": "Normal"
+        },
+        {
+          "slug": "large",
+          "size": "clamp(1.09rem, calc(0.97rem + 0.61vw), 1.41rem)",
+          "name": "Large"
+        },
+        {
+          "slug": "extra-large",
+          "size": "clamp(1.37rem, calc(1.22rem + 0.76vw), 1.76rem)",
+          "name": "Extra Large"
+        },
+        {
+          "slug": "huge",
+          "size": "clamp(1.71rem, calc(1.52rem + 0.95vw), 2.20rem)",
+          "name": "Huge"
+        },
+        {
+          "slug": "gigantic",
+          "size": "clamp(2.14rem, calc(1.90rem + 1.19vw), 2.75rem)",
+          "name": "Gigantic"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "800px",
+      "wideSize": "1100px"
+    },
+    "appearanceTools": true
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--primary-default)",
+      "text": "var(--wp--preset--color--secondary)"
+    },
+    "spacing": {
+      "blockGap": "1.5rem"
+    },
+    "typography": {
+      "fontSize": "var(--wp--preset--font-size--normal)",
+      "fontFamily": "var(--wp--preset--font-family--montserrat)"
+    },
+    "elements": {
+      "h1": {
+        "color": {
+          "text": "var(--wp--preset--color--secondary)"
+        }
+      },
+      "h2": {
+        "color": {
+          "text": "var(--wp--preset--color--secondary)"
+        }
+      }
+    },
+    "blocks": {
+      "core/button": {
+        "color": {
+          "background": "inherit",
+          "text": "currentColor"
+        },
+        "spacing": {
+          "padding": {
+            "top": "0.25rem",
+            "right": "0.5rem",
+            "bottom": "0.25rem",
+            "left": "0.5rem"
+          }
+        },
+        "border": {
+          "radius": "inherit",
+          "width": "1px",
+          "color": "currentColor"
+        },
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--normal)"
+        }
+      },
+      "core/navigation-link": {
+        "color": {
+          "text": "var(--wp--preset--color--secondary)"
+        },
+        "border": {
+          "radius": "30px",
+          "color": "var(--wp--preset--color--secondary)",
+          "width": "1px"
+        }
+      },
+      "core/post-terms": {
+        "color": {
+          "text": "var(--wp--preset--color--secondary)"
+        }
+      },
+      "core/separator": {
+        "spacing": {
+          "padding-top": "1rem"
+        }
+      },
+      "core/social-links": {
+        "spacing": {
+          "blockGap": "0rem",
+          "margin": {
+            "top": "0rem",
+            "right": "0rem",
+            "bottom": "0rem",
+            "left": "0rem"
+          }
+        }
+      }
+    }
+  }
+}
