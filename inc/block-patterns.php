@@ -3,30 +3,6 @@
 function blockhaus_register_patterns() {
 
   register_block_pattern(
-      'blockhaus/post-header-featured',
-      array(
-          'title'       => __( 'Hero Heading', 'blockhaus' ),
-          'content'     => '<!-- wp:group {"tagName":"section","layout":{"inherit":true}} -->
-          <section id="blockhaus-hero" class="wp-block-group"><!-- wp:group {"className":"flex flex-col md:flex-row py-20 w-full lg:w-3/4 mx-auto"} -->
-          <div class="wp-block-group flex flex-col md:flex-row py-20 w-full lg:w-3/4 mx-auto"><!-- wp:image {"id":381,"sizeSlug":"landscape","linkDestination":"none","className":"aspect-video rounded-md has-highlight-background-color has-background p-2 -rotate-2 z-0 image"} -->
-          <figure class="wp-block-image size-landscape aspect-video rounded-md has-highlight-background-color has-background p-2 -rotate-2 z-0 image"><img src="/wp-content/themes/blockhaus/assets/images/block-patterns/hero-header.jpg" alt="" class="wp-image-381"/></figure>
-          <!-- /wp:image -->
-          
-          <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"className":"bg-offset space-y-2 lg:space-y-6 p-6 md:-ml-12 self-center z-10","layout":{"inherit":false}} -->
-          <div class="wp-block-group bg-offset space-y-2 lg:space-y-6 p-6 md:-ml-12 self-center z-10"><!-- wp:heading {"level":1,"className":"font-black leading-6 md:leading-10","fontSize":"gigantic"} -->
-          <h1 class="font-black leading-6 md:leading-10 has-gigantic-font-size">Discover NeurOx YPAG</h1>
-          <!-- /wp:heading -->
-          
-          <!-- wp:paragraph {"className":"paragraph"} -->
-          <p class="paragraph">Start your research journey here</p>
-          <!-- /wp:paragraph --></div>
-          <!-- /wp:group --></div>
-          <!-- /wp:group --></section>
-          <!-- /wp:group -->',
-      )
-  ); 
-
-  register_block_pattern(
     'blockhaus/header-hero',
     array(
         'title'       => __( 'Hero Header', 'blockhaus' ),
@@ -155,6 +131,9 @@ register_block_pattern(
     ',
   )
   );
+
+  $testing = 'Hey there';
+
   register_block_pattern(
     'blockhaus/blockhaus-gallery',
     array(
@@ -162,7 +141,7 @@ register_block_pattern(
       'content' => '
       <!-- wp:group {"tagName":"aside","style":{"spacing":{"blockGap":"0px"}},"className":"blockhaus-gallery has-accent-background-color has-background p-6 rounded-md space-y-6"} -->
       <aside id="stories-gallery" class="wp-block-group blockhaus-gallery has-accent-background-color has-background p-6 rounded-md space-y-6"><!-- wp:paragraph -->
-      <p>Some description here</p>
+      <p>' . $testing . '</p>
       <!-- /wp:paragraph -->
 
       <!-- wp:gallery {"linkTo":"none"} -->
@@ -284,5 +263,65 @@ register_block_pattern(
           ',
         )
         );
+
+        $facebook = get_field('facebook_url', 'options');
+
+        if($facebook) {
+          $facebook_profile = '<!-- wp:social-link {"url":"' . $facebook . '","service":"facebook"} /-->';
+        }
+
+        $instagram = get_field('instagram_url', 'options');
+
+        if($instagram) {
+          $instagram_profile = '<!-- wp:social-link {"url":"' . $instagram . '","service":"instagram"} /-->';
+        }
+
+        $linkedin = get_field('linkedin_url', 'options');
+
+        if($linkedin) {
+          $linkedin_profile = '<!-- wp:social-link {"url":"' . $linkedin . '","service":"linkedin"} /-->';
+        }
+
+
+        $tiktok = get_field('tiktok_url', 'options');
+
+        if($tiktok) {
+          $tiktok_profile = '<!-- wp:social-link {"url":"' . $tiktok . '","service":"tiktok"} /-->';
+        }
+
+        $twitter = get_field('twitter_url', 'options');
+
+        if($twitter) {
+          $twitter_profile = '<!-- wp:social-link {"url":"' . $twitter . '","service":"twitter"} /-->';
+        }
+
+        $youtube = get_field('youtube_url', 'options');
+
+        if($youtube) {
+          $youtube_profile = '<!-- wp:social-link {"url":"' . $youtube . '","service":"youtube"} /-->';
+        }
+
+        
+
+        if($facebook || $instagram || $linkedin || $tiktok || $twitter || $youtube):
+
+          register_block_pattern(
+            'blockhaus/social-media-profiles',
+            array(
+              'title'   => __('Social Media Profiles', 'blockhaus'),
+              'content' => '
+              <!-- wp:social-links {"iconColor":"secondary","iconColorValue":"rgba(50 64 64 / 1)","size":"has-normal-icon-size","className":"is-style-logos-only"} -->
+              <ul class="wp-block-social-links has-normal-icon-size has-icon-color is-style-logos-only">' .
+
+              $facebook_profile . $instagram_profile . $linkedin_profile . $tiktok_profile . $twitter_profile . $youtube_profile
+
+              . '</ul>
+              <!-- /wp:social-links -->
+              ',
+            )
+            );
+
+        endif;
+      
 }
 add_action( 'init', 'blockhaus_register_patterns' );

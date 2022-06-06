@@ -28,3 +28,9 @@ function block_variations() {
 	);
 	}
 	add_action( 'enqueue_block_editor_assets', 'block_variations' );
+
+	function custom_admin_css() {
+  
+		wp_enqueue_style( 'admin_styles', get_template_directory_uri() . '/styles/admin.css',true,'1.1','all');
+	}
+add_action('admin_footer', 'custom_admin_css');

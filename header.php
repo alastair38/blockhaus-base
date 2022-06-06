@@ -66,7 +66,7 @@
 			
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation flex gap-0 lg:gap-6 items-center md:shadow-md py-2 h-10 md:bg-gray-50 pl-6 overflow-hidden md:border-gray-400 md:rounded-full">
+		<nav id="site-navigation" class="main-navigation flex gap-0 lg:gap-6 items-center md:shadow-md py-2 h-10 md:bg-gray-50 px-6 overflow-hidden md:border-gray-400 md:rounded-full">
 		
 			<button class="menu-toggle text-sm flex items-center gap-1 font-sans lg:hidden font-bold uppercase bg-white px-2 shadow-md rounded-full" aria-controls="primary-menu" aria-expanded="false"><span id="mobile-menu-text"><?php esc_html_e( 'Menu', 'blockhaus' ); ?></span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
   <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />

@@ -1,0 +1,26 @@
+/* ADMIN STYLES */
+
+.meta-box-sortables .postbox .toggle-indicator::before {
+  content: '\f343';
+  font-size: 18px;
+  color: #1e1e1e;
+}
+
+.meta-box-sortables .postbox.closed .handlediv .toggle-indicator::before {
+  content: '\f347';
+  font-size: 18px;
+  color: #1e1e1e;
+}
+
+.edit-post-meta-boxes-area #poststuff h2.hndle {
+  padding: 0 16px !important;
+}
+
+.edit-post-meta-boxes-area .postbox .handlediv {
+  width: 54px;
+}
+
+.handle-order-higher,
+.handle-order-lower {
+  display: none;
+}

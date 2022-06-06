@@ -121,7 +121,7 @@ if ( ! function_exists( 'blockhaus_post_thumbnail' ) ) :
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function blockhaus_post_thumbnail() {
+	function blockhaus_post_thumbnail($size) {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
@@ -130,13 +130,14 @@ if ( ! function_exists( 'blockhaus_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail( 'full', array( 'class' => 'aspect-video w-full object-cover' ) ); ?>
+				<?php the_post_thumbnail( $size, array( 'class' => 'aspect-video w-full object-cover' ) ); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
 
 				<?php
 					the_post_thumbnail(
+						$size,
 						'post-thumbnail',
 						array(
 							'alt' => the_title_attribute(

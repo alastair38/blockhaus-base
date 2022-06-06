@@ -29,7 +29,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php blockhaus_post_thumbnail(); ?>
+	<?php blockhaus_post_thumbnail('landscape'); ?>
 
 	<div class="entry-content">
 		<?php

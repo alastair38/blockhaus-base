@@ -10,13 +10,13 @@
 get_header();
 ?>
 
-	<main id="primary" class="bg-red-200">
+	<main id="primary" class="pt-20 lg:py-8 w-11/12 md:w-3/4 mx-auto grid-cols-1 md:grid-cols-2 gap-6">
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
+			<header class="col-span-full">
 				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_title( '<h1 class="page-title has-gigantic-font-size font-black">', '</h1>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
