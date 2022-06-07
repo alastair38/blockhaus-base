@@ -129,7 +129,7 @@ if ( ! function_exists( 'blockhaus_setup' ) ) {
 
     $args = array(
       'public'   => true,
-      '_builtin' => false
+      // '_builtin' => true
      );
   
   
@@ -232,8 +232,12 @@ function blockhaus_dashboard_widget_render() {
     <?php esc_html_e( $user_label, "blockhaus" );?>
     </span>
     <div class="actions">
-      <a href="/wp-admin/users.php">
-        <?php esc_html_e('View users' , "blockhaus" );?>
+      <a aria-label="View all users" href="/wp-admin/users.php">
+        <svg aria-hidden="none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        </svg>
+        <?php esc_html_e('users' , "blockhaus" );?>
       </a>
       <a aria-label="Add new user" href="/wp-admin/user-new.php">
         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -244,51 +248,19 @@ function blockhaus_dashboard_widget_render() {
     </div>
   </div>
 
-  <div class="dashboard-card">
-    <span class="number">
-    <?php esc_html_e( $count_pages->publish , "blockhaus" );?>
-    </span>
-    
-    <span class="post-type">
-    <?php esc_html_e( "pages", "blockhaus" );?>
-    </span>
-    <div  class="actions">
-      <a href="/wp-admin/edit.php?post_type=page"> <?php esc_html_e('View pages' , "blockhaus" );?></a>
-      <a aria-label="Add new page" href="/wp-admin/post-new.php?post_type=page">
-        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-        </svg>
-        <?php esc_html_e('page' , "blockhaus" );?>
-      </a>
-    </div>
-  </div>
-
-  <div class="dashboard-card">
-    <span class="number">
-    <?php esc_html_e( $count_posts->publish , "blockhaus" );?>
-    </span>
-    
-    <span class="post-type">
-    <?php esc_html_e( "posts", "blockhaus" );?>
-    </span>
-    <div class="actions">
-      <a href="/wp-admin/edit.php?post_type=post"> <?php esc_html_e('View posts' , "blockhaus" );?></a>
-      <a aria-label="Add new post" href="/wp-admin/post-new.php?post_type=post">
-        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-        </svg>
-        <?php esc_html_e('post' , "blockhaus" );?></a>
-    </div>
-  </div>
-
   <?php
 
 $cpts = blockhaus_get_custom_post_types();
 
 if($cpts):
   foreach($cpts as $cpt) {
-    $count = wp_count_posts($cpt->name);
-    if($count->publish == 1):
+    if($cpt->name !== 'attachment'):
+    
+      $total_count = wp_count_posts($cpt->name);
+      $count = $total_count->publish;
+    
+    
+    if($count == 1):
       $type = $cpt->name;
     else: 
       $type = $cpt->label;
@@ -296,13 +268,19 @@ if($cpts):
     ?>
     <div class="dashboard-card">
     <span class="number">
-    <?php esc_html_e( $count->publish , "blockhaus" );?>
+    <?php esc_html_e( $count , "blockhaus" );?>
     </span>
     <span class="post-type">
     <?php esc_html_e( $type, "blockhaus" );?>
     </span>
     <div class="actions">
-      <a href="/wp-admin/edit.php?post_type=<?php echo $cpt->name;?>"> <?php esc_html_e('View ' . $cpt->label , "blockhaus" );?></a>
+      <a aria-label="View all <?php esc_html_e( $cpt->label , "blockhaus" );?>" href="/wp-admin/edit.php?post_type=<?php echo $cpt->name;?>">
+        <svg aria-hidden="none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        </svg>
+      <?php esc_html_e($cpt->label , "blockhaus" );?>
+      </a>
       <a aria-label="Add new <?php esc_html_e( $cpt->name , "blockhaus" );?>" href="/wp-admin/post-new.php?post_type=<?php echo $cpt->name;?>">
         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
@@ -311,8 +289,11 @@ if($cpts):
     </a>
     </div>
   </div>
+
    
-  <?php }
+  <?php
+  endif;
+ }
 endif;
 ?>
 
