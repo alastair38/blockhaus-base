@@ -11,14 +11,25 @@
 
 <article id="post-<?php the_ID(); ?>" class="p-6 w-11/12 md:w-3/4 bg-white rounded-md mx-auto space-y-6">
 	<header class="post-header relative w-full">
-		<?php the_title( '<h1 class="has-extra-large-font-size font-black absolute right-2 left-2 bottom-2 md:left-auto md:right-6 md:bottom-6 px-2 py-1 -rotate-1 bg-yellow-300">', '</h1>' ); ?>
-		<?php blockhaus_post_thumbnail('full'); ?>
+		<?php if ( has_post_thumbnail() ) :
+
+		the_title( '<h1 class="has-extra-large-font-size font-black absolute right-2 left-2 bottom-2 md:left-auto md:right-6 md:bottom-6 px-2 py-1 -rotate-1 bg-yellow-300">', '</h1>' );
+		blockhaus_post_thumbnail('full');
+
+		else: 
+
+			the_title( '<h1 class="has-extra-large-font-size font-black w-fit px-2 py-1 -rotate-1 bg-yellow-300">', '</h1>' );
+
+		endif; ?>
 	</header><!-- .entry-header -->
 
 	
 
 	<div class="space-y-6">
 		<?php
+
+		echo get_option('stylesheet'); 
+		
 		the_content();
 
 		wp_link_pages(

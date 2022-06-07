@@ -124,4 +124,149 @@ if ( ! function_exists( 'blockhaus_setup' ) ) {
   }
   
   add_filter( 'image_size_names_choose', 'blockhaus_image_names' );
+
+  function blockhaus_get_custom_post_types() {
+
+    $args = array(
+      'public'   => true,
+      '_builtin' => false
+     );
+  
+  
+    $output = 'objects'; // 'names' or 'objects' (default: 'names')
+    $operator = 'and'; // 'and' or 'or' (default: 'and')
+      
+    $post_types = get_post_types( $args, $output, $operator );
+
+    return $post_types;
+  }
+
+  function my_custom_dashboard_widgets() {
+
+    global $wp_meta_boxes;
+    remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal'); //Removes the 'incoming links' widget
+    remove_meta_box('dashboard_plugins', 'dashboard', 'normal'); //Removes the 'plugins' widget
+    remove_meta_box('dashboard_primary', 'dashboard', 'normal'); //Removes the 'WordPress News' widget
+    remove_meta_box('dashboard_secondary', 'dashboard', 'normal'); //Removes the secondary widget
+    remove_meta_box('dashboard_quick_press', 'dashboard', 'side'); //Removes the 'Quick Draft' widget
+    remove_meta_box('dashboard_recent_drafts', 'dashboard', 'side'); //Removes the 'Recent Drafts' widget
+    remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); //Removes the 'Activity' widget
+    remove_meta_box('dashboard_right_now', 'dashboard', 'normal'); //Removes the 'At a Glance' widget
+    remove_meta_box('dashboard_activity', 'dashboard', 'normal'); //Removes the 'Activity' widget (since 3.8)
+    remove_meta_box('dashboard_primary', 'dashboard', 'side' ); 
+    remove_meta_box('dashboard_secondary', 'dashboard', 'side' );
+    remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+
+  }
+
+  add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
+
+  add_filter( 'wpforms_admin_dashboardwidget', '__return_false' );
+
+  /**
+ * Add a widget to the dashboard.
+ *
+ * This function is hooked into the 'wp_dashboard_setup' action below.
+ */
+function blockhaus_add_dashboard_widgets() {
+  $site_title = get_bloginfo( 'name' );
+  wp_add_dashboard_widget(
+      'blockhaus_dashboard_widget',                          // Widget slug.
+      esc_html__( $site_title . ' quick glance', 'blockhaus' ), // Title.
+      'blockhaus_dashboard_widget_render'                    // Display function.
+  ); 
+}
+add_action( 'wp_dashboard_setup', 'blockhaus_add_dashboard_widgets' );
+
+/**
+* Create the function to output the content of our Dashboard Widget.
+*/
+function blockhaus_dashboard_widget_render() {
+  // Display whatever you want to show.
+  $count_posts = wp_count_posts();
+  $count_pages = wp_count_posts('page');
+  $users = count_users();
+  if($users['total_users'] === 1):
+    $user_label = 'user';
+  else:
+    $user_label = 'users';
+  endif;
+
+  $current_user = wp_get_current_user();
+ 
+?>
+  <div class="post-count col-span-full">
+  <p><?php echo 'Hi, <span class="name">' . $current_user->display_name . '</span>. Welcome to ' . get_bloginfo( 'name' ) . '.' ?></p>
+
+  <p><?php esc_html_e('This dashboard gives you quick access to information about your site and your main content areas.' , "blockhaus" );?></p>
+   
+    <a href="/wp-admin/profile.php"> <?php esc_html_e('Update your profile' , "blockhaus" );?></a>
+  </div>
+  <div class="post-count">
+    <span class="number">
+    <?php esc_html_e( $users['total_users'] , "blockhaus" );?>
+    </span>
+    
+    <span class="post-type">
+    <?php esc_html_e( $user_label, "blockhaus" );?>
+    </span>
+    <a href="/wp-admin/users.php"> <?php esc_html_e('View users' , "blockhaus" );?></a>
+  </div>
+
+  <div class="post-count">
+    <span class="number">
+    <?php esc_html_e( $count_pages->publish , "blockhaus" );?>
+    </span>
+    
+    <span class="post-type">
+    <?php esc_html_e( "pages", "blockhaus" );?>
+    </span>
+    <a href="/wp-admin/edit.php?post_type=page"> <?php esc_html_e('View pages' , "blockhaus" );?></a>
+  </div>
+
+  <div class="post-count">
+    <span class="number">
+    <?php esc_html_e( $count_posts->publish , "blockhaus" );?>
+    </span>
+    
+    <span class="post-type">
+    <?php esc_html_e( "posts", "blockhaus" );?>
+    </span>
+    <a href="/wp-admin/edit.php?post_type=post"> <?php esc_html_e('View posts' , "blockhaus" );?></a>
+  </div>
+
+  <?php
+
+$cpts = blockhaus_get_custom_post_types();
+
+if($cpts):
+  foreach($cpts as $cpt) {
+    $count = wp_count_posts($cpt->name);
+    if($count === 1):
+      $type = $cpt->name;
+    else: 
+      $type = $cpt->label;
+    endif;
+    ?>
+    <div class="post-count">
+    <span class="number">
+    <?php esc_html_e( $count->publish , "blockhaus" );?>
+    </span>
+    <span class="post-type">
+    <?php esc_html_e( $type, "blockhaus" );?>
+    </span>
+    <a href="/wp-admin/edit.php?post_type=<?php echo $cpt->name;?>"> <?php esc_html_e('View ' . $cpt->label , "blockhaus" );?></a>
+  </div>
+   
+  <?php }
+endif;
+?>
+
+  <div class="post-count">
+    <a href="/wp-admin/admin.php?page=theme-options">Update settings</a>
+   
+  </div>
+<?php }
+
+
   

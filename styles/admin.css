@@ -1,5 +1,18 @@
 /* ADMIN STYLES */
 
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''), url('../assets/fonts/Montserrat-Regular.woff') format('woff');
+}
+
+.acf-postbox,
+.postbox {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
 .meta-box-sortables .postbox .toggle-indicator::before {
   content: '\f343';
   font-size: 18px;
@@ -23,4 +36,140 @@
 .handle-order-higher,
 .handle-order-lower {
   display: none;
+}
+
+/* .acf-postbox .postbox-header {
+  background: rgba(253 224 71 / 1);
+} */
+
+.toplevel_page_theme-options .wrap.acf-settings-wrap {
+  color: rgba(50 64 64 / 1);
+}
+
+.wp-core-ui .button-primary {
+  background-color: rgba(50 64 64 / 1);
+  border-color: currentColor;
+}
+
+.wp-core-ui .button-primary:focus,
+.wp-core-ui .button-primary:hover {
+  background-color: rgba(0 4 4 / 1);
+  border-color: currentColor;
+}
+
+#adminmenu a:hover,
+#adminmenu a:hover div.wp-menu-image:before {
+  color: white !important;
+}
+
+#wpadminbar .ab-icon:before,
+#adminmenu div.wp-menu-image:before,
+#adminmenu div.wp-menu-name,
+#adminmenu .wp-has-current-submenu div.wp-menu-image:before,
+.wp-admin #wpadminbar #wp-admin-bar-site-name > .ab-item:before,
+#wpadminbar #wp-admin-bar-site-name a.ab-item,
+#wpadminbar > #wp-toolbar span.ab-label {
+  color: #6ee7b7;
+}
+
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu .wp-menu-name,
+#adminmenu li.current a.menu-top {
+  background: black;
+}
+
+#wp-admin-bar-wpforms-menu {
+  display: none;
+}
+
+#adminmenu,
+li#wp-admin-bar-my-account .ab-item,
+li#wp-admin-bar-my-account .ab-item .display-name,
+#wpadminbar,
+#adminmenu div.wp-menu-name,
+#wpadminbar #wp-admin-bar-site-name a.ab-item,
+#wpadminbar > #wp-toolbar span.ab-label,
+.toplevel_page_theme-options,
+#wpbody-content {
+  font-family: 'Montserrat';
+}
+
+#wpadminbar {
+  box-shadow: 0 1px 1px rgba(70, 70, 70, 0.12), 0 1px 1px rgba(70, 70, 70, 0.12),
+    0 2px 2px rgba(70, 70, 70, 0.12), 0 4px 4px rgba(70, 70, 70, 0.12);
+}
+
+/* DASHBOARD WIDGETS */
+
+.inside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  place-content: center;
+}
+
+.post-count {
+  background: #6ee7b7;
+  padding: 3rem;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.post-count p {
+  margin: 0;
+  font-size: 1.15rem;
+  width: 65ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
+  background: rgb(61, 41, 41);
+}
+
+.col-span-full p {
+  color: white;
+}
+
+.post-count .number {
+  font-size: 4rem;
+  line-height: 0.75;
+}
+
+.post-count .post-type {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.post-count a {
+  background: white;
+  padding-inline: 0.75rem;
+  border-radius: 30px;
+  padding-block: 0.25rem;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: inherit;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: 200ms;
+}
+
+.post-count a:hover,
+.post-count a:focus {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+#dashboard-widgets .hndle.ui-sortable-handle {
+  text-transform: uppercase;
+}
+
+#wpbody-content #dashboard-widgets .postbox-container {
+  width: 100%;
 }
