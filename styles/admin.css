@@ -1,5 +1,11 @@
 /* ADMIN STYLES */
-
+:root {
+  --wp--preset--color--accent: rgba(110 231 183 / 1);
+  --wp--preset--color--secondary: rgba(50 64 64 / 1);
+  --wp--preset--color--neutral-light-100: rgba(244 244 244 / 1);
+  --wp--preset--color--neutral-light-900: rgba(200 200 200 / 1);
+  --wp--preset--color--neutral-dark-100: rgba(35 41 41 / 1);
+}
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
@@ -16,13 +22,13 @@
 .meta-box-sortables .postbox .toggle-indicator::before {
   content: '\f343';
   font-size: 18px;
-  color: #1e1e1e;
+  color: var(--wp--preset--color--secondary);
 }
 
 .meta-box-sortables .postbox.closed .handlediv .toggle-indicator::before {
   content: '\f347';
   font-size: 18px;
-  color: #1e1e1e;
+  color: var(--wp--preset--color--secondary);
 }
 
 .edit-post-meta-boxes-area #poststuff h2.hndle {
@@ -43,11 +49,58 @@
 } */
 
 .toplevel_page_theme-options .wrap.acf-settings-wrap {
-  color: rgba(50 64 64 / 1);
+  color: var(--wp--preset--color--secondary);
+}
+
+/* #wp-toolbar {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+ul#wp-admin-bar-root-default {
+  position: relative;
+}
+
+ul#wp-admin-bar-root-default:before {
+  content: '';
+  aspect-ratio: 60 / 45;
+  background-image: url('/wp-content/themes/blockhaus/screenshot.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: block;
+  position: absolute;
+  top: 0rem;
+  left: -2.5rem;
+  bottom: 0rem;
+} */
+
+a.components-button.edit-post-fullscreen-mode-close svg {
+  display: none;
+}
+
+.edit-post-fullscreen-mode-close.components-button:before {
+  inset: 0;
+}
+
+.block-editor a.components-button.edit-post-fullscreen-mode-close {
+  background: url('/wp-content/themes/blockhaus/screenshot.png') #101f34;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.block-editor .edit-post-header :not(.dashboard-card.settings) a:hover,
+.block-editor .edit-post-header :not(.dashboard-card.settings) a:focus {
+  background: url('/wp-content/themes/blockhaus/screenshot.png') #101f34 !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+  opacity: 0.85;
 }
 
 .wp-core-ui .button-primary {
-  background-color: rgba(50 64 64 / 1);
+  background-color: var(--wp--preset--color--secondary);
   border-color: currentColor;
 }
 
@@ -57,9 +110,9 @@
   border-color: currentColor;
 }
 
-#adminmenu a:hover,
+/* #adminmenu a:hover,
 #adminmenu a:hover div.wp-menu-image:before {
-  color: white !important;
+  color: var(--wp--preset--color--neutral-light-100) !important;
 }
 
 #wpadminbar .ab-icon:before,
@@ -69,8 +122,8 @@
 .wp-admin #wpadminbar #wp-admin-bar-site-name > .ab-item:before,
 #wpadminbar #wp-admin-bar-site-name a.ab-item,
 #wpadminbar > #wp-toolbar span.ab-label {
-  color: #6ee7b7;
-}
+  color: var(--wp--preset--color--accent);
+} */
 
 #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu .wp-menu-name,
 #adminmenu li.current a.menu-top {
@@ -100,25 +153,46 @@ li#wp-admin-bar-my-account .ab-item .display-name,
 
 /* DASHBOARD WIDGETS */
 
-.inside {
+#blockhaus_dashboard_widget .inside {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
   place-content: center;
 }
 
-.post-count {
-  background: #6ee7b7;
-  padding: 3rem;
+@media (min-width: 640px) {
+  #blockhaus_dashboard_widget .inside {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  #blockhaus_dashboard_widget .inside {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.dashboard-card {
+  padding: 3rem 1.5rem;
   border-radius: 3px;
   display: flex;
+  border: 2px solid transparent;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  gap: 1rem;
+  gap: 1.5rem;
+  transition: 200ms;
 }
 
-.post-count p {
+.dashboard-card:not(.settings) {
+  background: var(--wp--preset--color--accent);
+}
+
+.dashboard-card.settings {
+  background: var(--wp--preset--color--secondary);
+}
+
+.dashboard-card p {
   margin: 0;
   font-size: 1.15rem;
   width: 65ch;
@@ -128,25 +202,40 @@ li#wp-admin-bar-my-account .ab-item .display-name,
 
 .col-span-full {
   grid-column: 1 / -1;
-  background: rgb(61, 41, 41);
 }
 
 .col-span-full p {
-  color: white;
+  color: var(--wp--preset--color--neutral-light-100);
 }
 
-.post-count .number {
+.dashboard-card .number {
   font-size: 4rem;
   line-height: 0.75;
 }
 
-.post-count .post-type {
+.dashboard-card .name {
+  font-weight: 900;
+}
+
+.dashboard-card .post-type {
   text-transform: uppercase;
   font-weight: 900;
 }
 
-.post-count a {
-  background: white;
+.dashboard-card .actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.dashboard-card a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  background: var(--wp--preset--color--neutral-light-100);
   padding-inline: 0.75rem;
   border-radius: 30px;
   padding-block: 0.25rem;
@@ -155,15 +244,32 @@ li#wp-admin-bar-my-account .ab-item .display-name,
   text-transform: capitalize;
   color: inherit;
   border: 1px solid transparent;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  /* box-shadow: 0 4px 6px -1px var(--wp--preset--color--neutral-light-900),
+    0 2px 4px -2px var(--wp--preset--color--neutral-light-900); */
   transition: 200ms;
 }
 
-.post-count a:hover,
-.post-count a:focus {
+.dashboard-card.settings a svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+:not(.dashboard-card.settings) a svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.dashboard-card.settings a:hover,
+.dashboard-card.settings a:focus {
   background: transparent;
-  color: white;
-  border-color: white;
+  color: var(--wp--preset--color--neutral-light-100);
+  border-color: var(--wp--preset--color--neutral-light-100);
+}
+
+:not(.dashboard-card.settings) a:hover,
+:not(.dashboard-card.settings) a:focus {
+  background: transparent;
+  border-color: currentColor;
 }
 
 #dashboard-widgets .hndle.ui-sortable-handle {
