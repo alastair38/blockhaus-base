@@ -43,8 +43,7 @@
   "scripts": {
     "dev": "tailwindcss -i ./styles/tailwind.css -o ./styles/style.css --postcss",
     "watch": "tailwindcss -i ./styles/tailwind.css -o ./styles/style.css --postcss --watch",
-    "lint:js": "wp-scripts lint-js 'js/*.js'",
-    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+    "production": "tailwindcss -i ./styles/tailwind.css -o ./styles/style.css --postcss --minify"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.2"

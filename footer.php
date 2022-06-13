@@ -11,7 +11,7 @@
 
 ?>
 
-	<footer id="colophon" class="px-6 pt-20 place-items-center bg-white slanted-top">
+	<footer id="colophon" class="px-6 pt-20 place-items-center bg-white">
 <div class="grid grid-cols-3 gap-20">
 
 

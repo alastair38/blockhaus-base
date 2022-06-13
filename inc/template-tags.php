@@ -234,7 +234,7 @@ function blockhaus_post_edit_link()  {
 		$page_id = get_queried_object_id();
 		
 		if(current_user_can( 'edit_post', $page_id )):
-		echo '<a class="flex gap-2 relative group items-center p-2 bg-neutral-light-100 hover:bg-neutral-light-500 focus:bg-neutral-light-500 rounded-full" href="' . esc_url( get_edit_post_link() ) . '">
+		echo '<a class="flex gap-2 relative group items-center p-2 bg-neutral-light-100 hover:bg-neutral-light-500 focus:bg-neutral-light-500 rounded-full border border-current" href="' . esc_url( get_edit_post_link() ) . '">
 			<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 			<path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
 			</svg>
@@ -247,7 +247,7 @@ function blockhaus_post_edit_link()  {
 function blockhaus_admin_link() {
 	
 	if( is_user_logged_in() ):
-	echo '<a class="flex gap-2 relative group items-center p-2 aspect-square bg-neutral-light-100 hover:bg-neutral-light-500 focus:bg-neutral-light-500 rounded-full" href="' . admin_url() . '">
+	echo '<a class="flex gap-2 relative group items-center p-2 aspect-square bg-neutral-light-100 hover:bg-neutral-light-500 focus:bg-neutral-light-500 rounded-full border border-current" href="' . admin_url() . '">
 	<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 		<path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
 	</svg>
@@ -260,7 +260,7 @@ function blockhaus_admin_link() {
 function blockhaus_logout_link() {
 
 	if( is_user_logged_in() ):
-	echo '<a class="flex gap-2 relative group items-center p-2 bg-neutral-light-100 hover:bg-neutral-light-500 focus:bg-neutral-light-500 rounded-full" href="' . esc_url( wp_logout_url() ) . '">
+	echo '<a class="flex gap-2 relative group items-center p-2 bg-neutral-light-100 hover:bg-neutral-light-500 focus:bg-neutral-light-500 rounded-full border border-current" href="' . esc_url( wp_logout_url() ) . '">
 	<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 	<path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
 	</svg>

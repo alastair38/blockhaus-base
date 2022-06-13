@@ -23,7 +23,7 @@ function blockhaus_body_classes( $classes ) {
 	}
 
 	else {
-		$classes[] = 'flex flex-col h-full w-full grain-dots';
+		$classes[] = 'flex flex-col h-full w-full bg-grain-dots bg-fixed';
 	}
 
 	return $classes;
