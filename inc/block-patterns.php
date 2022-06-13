@@ -1,14 +1,37 @@
 <?php
 
+register_block_pattern_category(
+  'callouts-and-quotes',
+  array( 'label' => __( 'Callouts and quotes', 'blockhaus' ) )
+);
+
+register_block_pattern_category(
+  'social-media',
+  array( 'label' => __( 'Social media', 'blockhaus' ) )
+);
+
+register_block_pattern_category(
+  'users',
+  array( 'label' => __( 'Users and profiles', 'blockhaus' ) )
+);
+
+register_block_pattern_category(
+  'related-content',
+  array( 'label' => __( 'Showing related content', 'blockhaus' ) )
+);
+
 function blockhaus_register_patterns() {
 
   register_block_pattern(
     'blockhaus/header-hero',
     array(
         'title'       => __( 'Hero Header', 'blockhaus' ),
+        'categories'    => [
+          'header',
+        ],
         'content'     => '<!-- wp:group {"tagName":"section","className":"grid grid-cols-1 md:grid-cols-hero place-items-center w-4/5 py-20 mx-auto","layout":{"inherit":true}} -->
-        <section class="wp-block-group grid grid-cols-1 md:grid-cols-hero place-items-center w-4/5 py-20 mx-auto"><!-- wp:image {"id":578,"sizeSlug":"landscape","linkDestination":"none","className":"md:col-span-2 md:col-start-1 md:row-start-1 size-landscape aspect-video rounded-md has-highlight-background-color has-background p-2 -rotate-2 z-0 image"} -->
-        <figure class="wp-block-image md:col-span-2 md:col-start-1 md:row-start-1 size-landscape aspect-video rounded-md has-highlight-background-color has-background p-2 -rotate-2 z-0 image"><img src="/wp-content/themes/blockhaus/assets/images/block-patterns/hero-header.jpg" alt="A woman sits in a doorway looking at her laptop" class="wp-image-578"/></figure>
+        <section class="wp-block-group grid grid-cols-1 md:grid-cols-hero place-items-center w-4/5 py-20 mx-auto"><!-- wp:image {"id":578,"sizeSlug":"landscape","linkDestination":"none","className":"md:col-span-2 md:col-start-1 md:row-start-1 size-landscape aspect-video rounded-md p-2 -rotate-2 z-0 image"} -->
+        <figure class="wp-block-image md:col-span-2 md:col-start-1 md:row-start-1 size-landscape aspect-video rounded-md p-2 -rotate-2 z-0 image"><img src="/wp-content/themes/blockhaus/assets/images/block-patterns/hero-header.jpg" alt="A woman sits in a doorway looking at her laptop" class="wp-image-578"/></figure>
         <!-- /wp:image -->
         
         <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"className":"bg-offset md:col-span-2 md:col-start-2 md:row-start-1 space-y-2 lg:space-y-6 p-6 self-center z-10","layout":{"inherit":false}} -->
@@ -28,6 +51,9 @@ function blockhaus_register_patterns() {
      'blockhaus/profile-block',
      array(
          'title'       => __( 'Profile Block - Image Left', 'blockhaus' ),
+         'categories'    => [
+          'users',
+        ],
          'content'     => '<!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"className":"blockhaus-profile flex-col md:flex-row flex gap-0 md:gap-12"} -->
          <div class="wp-block-group blockhaus-profile flex-col md:flex-row flex gap-0 md:gap-12"><!-- wp:image {"id":458,"width":300,"height":300,"sizeSlug":"profile","linkDestination":"none","className":"aspect-square"} -->
          <figure class="wp-block-image size-profile is-resized aspect-square"><img src="/wp-content/themes/blockhaus/assets/images/block-patterns/profile-image.jpg" alt="A close up of a young Asian man against a grey background" class="wp-image-458" width="300" height="300"/></figure>
@@ -56,6 +82,9 @@ function blockhaus_register_patterns() {
   'blockhaus/profile-block-alternate',
   array(
       'title'       => __( 'Profile Block - Image Right', 'blockhaus' ),
+      'categories'    => [
+        'users',
+      ],
       'content'     => '<!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"className":"blockhaus-profile-alt flex-col-reverse justify-between md:flex-row flex gap-0 md:gap-12"} -->
       <div class="wp-block-group blockhaus-profile-alt flex-col-reverse justify-between md:flex-row flex gap-0 md:gap-12"><!-- wp:group {"className":"self-start md:self-center mt-0 md:mt-auto py-6 md:p-0 space-y-6"} -->
       <div class="wp-block-group self-start md:self-center mt-0 md:mt-auto py-6 md:p-0 space-y-6"><!-- wp:heading {"className":"font-bold"} -->
@@ -84,6 +113,9 @@ function blockhaus_register_patterns() {
   'blockhaus/cta-with-video',
   array(
       'title'       => __( 'Call to Action - with video', 'blockhaus' ),
+      'categories'    => [
+        'callouts-and-quotes',
+      ],
       'content'     => '
       <!-- wp:group {"tagName":"section","className":"py-20 has-accent-background-color has-background slanted z-0 relative overflow-hidden"} -->
       <section class="wp-block-group py-20 has-accent-background-color has-background slanted z-0 relative overflow-hidden"><!-- wp:heading {"textAlign":"center","fontSize":"huge"} -->
@@ -110,27 +142,48 @@ function blockhaus_register_patterns() {
   )
 ); 
 
-register_block_pattern(
-  'blockhaus/latest-posts',
-  array(
-    'title'   => __('Latest posts', 'blockhaus'),
-    'content' => '
-      <!-- wp:group {"tagName":"section", "className":"py-28 has-accent-background-color has-background slanted z-0 relative overflow-hidden","layout":{"inherit":true}} -->
-      <section class="wp-block-group py-28 has-accent-background-color has-background slanted z-0 relative overflow-hidden"><!-- wp:heading {"fontSize":"gigantic"} -->
-      <h2 class="has-gigantic-font-size font-black">Blog</h2>
+  register_block_pattern(
+    'blockhaus/latest-blogposts',
+    array(
+      'title'   => __('Latest blog posts', 'blockhaus'),
+      'categories'    => [
+        'related-content',
+      ],
+      'content' => '
+      <!-- wp:group {"tagName":"section","style":{"spacing":{"blockGap":"0px"}},"className":"blockhaus-blog-posts grid gap-6 px-20 py-28 has-accent-background-color has-background slanted z-0 relative overflow-hidden","layout":{"inherit":false}} -->
+      <section id="latest-posts" class="wp-block-group blockhaus-blog-posts grid gap-6 px-20 py-28 has-accent-background-color has-background slanted z-0 relative overflow-hidden"><!-- wp:group {"backgroundColor":"secondary","textColor":"primary-default","className":"rounded-md p-6 flex flex-col justify-between"} -->
+      <div class="wp-block-group rounded-md p-6 flex flex-col justify-between has-primary-default-color has-secondary-background-color has-text-color has-background"><!-- wp:heading {"textColor":"primary-default","className":"font-black","fontSize":"gigantic"} -->
+      <h2 class="font-black has-primary-default-color has-text-color has-gigantic-font-size">Blog</h2>
       <!-- /wp:heading -->
 
-      <!-- wp:query {"queryId":17,"query":{"perPage":"4","pages":"1","offset":0,"postType":"post","categoryIds":[],"tagIds":[],"order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"displayLayout":{"type":"list"},"layout":{"inherit":true}} -->
-      <div class="wp-block-query"><!-- wp:post-template {"className":"grid grid-cols-1 md:grid-cols-2 gap-8 post-template-grid"} -->
-      <!-- wp:post-featured-image {"width":""} /-->
+      <!-- wp:paragraph -->
+      <p>The latest from the YPAG blog.</p>
+      <!-- /wp:paragraph -->
 
-      <!-- wp:post-title {"level":3,"isLink":true, "className":"font-bold has-large-font-size bg-offset p-0 absolute bottom-2 right-2"} /-->
+      <!-- wp:buttons -->
+      <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-button-retro"} -->
+      <div class="wp-block-button is-style-button-retro"><a class="wp-block-button__link">Visit the blog</a></div>
+      <!-- /wp:button --></div>
+      <!-- /wp:buttons --></div>
+      <!-- /wp:group -->
+
+      <!-- wp:query {"queryId":1,"query":{"perPage":"3","pages":"1","offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"displayLayout":{"type":"list","columns":3},"layout":{"inherit":false}} -->
+      <div class="wp-block-query"><!-- wp:post-template {"className":"grid grid-cols-3 md:grid-cols-3 gap-6 post-template-grid"} -->
+      <!-- wp:post-featured-image {"width":"","height":"","sizeSlug":"blog"} /-->
+
+      <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"className":"h-full p-6 flex flex-col","layout":{"type":"default"}} -->
+      <div class="wp-block-group h-full p-6 flex flex-col"><!-- wp:post-title {"level":3} /-->
+
+      <!-- wp:post-date {"className":"pb-6","fontSize":"small"} /-->
+
+      <!-- wp:read-more {"content":"View article","className":"bg-yellow-300 border border-current px-2 py-1 shadow-retro mt-auto"} /--></div>
+      <!-- /wp:group -->
       <!-- /wp:post-template --></div>
       <!-- /wp:query --></section>
       <!-- /wp:group -->
-    ',
-  )
-  );
+      ',
+    )
+    );
 
   $testing = 'Hey there';
 
@@ -138,6 +191,9 @@ register_block_pattern(
     'blockhaus/blockhaus-gallery',
     array(
       'title'   => __('Blockhaus Gallery', 'blockhaus'),
+      'categories'    => [
+        'gallery',
+      ],
       'content' => '
       <!-- wp:group {"tagName":"aside","style":{"spacing":{"blockGap":"0px"}},"className":"blockhaus-gallery has-accent-background-color has-background p-6 rounded-md space-y-6"} -->
       <aside id="stories-gallery" class="wp-block-group blockhaus-gallery has-accent-background-color has-background p-6 rounded-md space-y-6"><!-- wp:paragraph -->
@@ -174,6 +230,9 @@ register_block_pattern(
     'blockhaus/team-gallery',
     array(
       'title'   => __('Team Gallery', 'blockhaus'),
+      'categories'    => [
+        'gallery',
+      ],
       'content' => '
       <!-- wp:group {"tagName":"section","style":{"spacing":{"blockGap":"0px"}},"className":"grid grid-cols-3 gap-6 mt-6","layout":{"inherit":true}} -->
       <section class="wp-block-group grid grid-cols-3 gap-6 mt-6"><!-- wp:group {"className":"flex flex-col bg-offset justify-center p-6"} -->
@@ -210,9 +269,12 @@ register_block_pattern(
       'blockhaus/blockhaus-quote',
       array(
         'title'   => __('Blockhaus Quote', 'blockhaus'),
+        'categories'    => [
+          'callouts-and-quotes',
+        ],
         'content' => '
-        <!-- wp:quote {"className":"blockhaus-quote bg-offset font-bold flex flex-col gap-6 p-16 rounded-md is-style-default","fontSize":"large"} -->
-        <blockquote class="wp-block-quote blockhaus-quote bg-offset font-bold flex flex-col gap-6 p-16 rounded-md is-style-default has-large-font-size"><p>The cure for boredom is curiosity. There is no cure for curiosity.</p><cite>Dorothy Parker</cite></blockquote>
+        <!-- wp:quote {"className":"blockhaus-quote relative bg-neutral-light-500 flex flex-col items-center text-center gap-2 px-20 py-16 rounded-md border-l-0 is-style-default","fontSize":"large"} -->
+        <blockquote class="wp-block-quote blockhaus-quote relative bg-neutral-light-500 flex flex-col items-center text-center gap-2 px-20 py-16 rounded-md border-l-0 is-style-default has-large-font-size"><p>The cure for boredom is curiosity. There is no cure for curiosity.</p><cite>Dorothy Parker</cite></blockquote>
         <!-- /wp:quote -->
         ',
       )
@@ -222,6 +284,9 @@ register_block_pattern(
         'blockhaus/blockhaus-quote-with-image',
         array(
           'title'   => __('Blockhaus Quote with Image', 'blockhaus'),
+          'categories'    => [
+            'callouts-and-quotes',
+          ],
           'content' => '
           <!-- wp:group {"className":"blockhaus-quote-image bg-gray-100 rounded-md flex flex-col items-center p-6 justify-center"} -->
           <div class="wp-block-group blockhaus-quote-image bg-gray-100 rounded-md flex flex-col items-center p-6 justify-center"><!-- wp:image {"id":458,"width":150,"height":150,"sizeSlug":"thumbnail","linkDestination":"none","className":"is-style-default rounded-full aspect-square"} -->
@@ -240,6 +305,9 @@ register_block_pattern(
       'blockhaus/instagram',
       array(
         'title'   => __('Instagram', 'blockhaus'),
+        'categories'    => [
+          'social-media',
+        ],
         'content' => '
         <!-- wp:group {"tagName":"section","style":{"spacing":{"blockGap":"0px"}},"className":"flex gap-8 items-center justify-center p-6 w-fit mx-auto"} -->
         <section class="wp-block-group flex gap-8 items-center justify-center p-6 w-fit mx-auto"><!-- wp:paragraph {"align":"center"} -->
@@ -301,14 +369,15 @@ register_block_pattern(
           $youtube_profile = '<!-- wp:social-link {"url":"' . $youtube . '","service":"youtube"} /-->';
         }
 
-        
-
         if($facebook || $instagram || $linkedin || $tiktok || $twitter || $youtube):
 
           register_block_pattern(
             'blockhaus/social-media-profiles',
             array(
               'title'   => __('Social Media Profiles', 'blockhaus'),
+              'categories'    => [
+                'social-media',
+              ],
               'content' => '
               <!-- wp:social-links {"iconColor":"secondary","iconColorValue":"rgba(50 64 64 / 1)","size":"has-normal-icon-size","className":"is-style-logos-only"} -->
               <ul class="wp-block-social-links has-normal-icon-size has-icon-color is-style-logos-only">' .

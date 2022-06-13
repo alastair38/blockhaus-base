@@ -67,6 +67,16 @@ require get_template_directory() . '/inc/block-patterns.php';
  */
 require get_template_directory() . '/inc/seo.php';
 
+/**
+ * LOGIN
+ */
+require get_template_directory() . '/inc/login.php';
+
+/**
+ * ADMIN
+ */
+require get_template_directory() . '/inc/admin.php';
+
 
 /**
  * Load Jetpack compatibility file.
@@ -74,9 +84,3 @@ require get_template_directory() . '/inc/seo.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-function example_admin_bar_remove_logo() {
-	global $wp_admin_bar;
-	$wp_admin_bar->remove_menu( 'wp-logo' );
-}
-add_action( 'wp_before_admin_bar_render', 'example_admin_bar_remove_logo', 0 );

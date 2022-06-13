@@ -3,7 +3,7 @@
 //   title: 'Button - Rounded',
 //   description: 'Rounded button',
 //   attributes: {
-//     className: 'rounded-button bg-emerald-300',
+//     className: 'rounded-button bg-green-400',
 //     ordered: true,
 //   },
 //   scope: ['block', 'inserter'],

@@ -16,12 +16,12 @@
         },
         {
           "slug": "secondary",
-          "color": "rgba(50 64 64 / 1)",
+          "color": "rgba(41 44 44 / 1)",
           "name": "Secondary"
         },
         {
           "slug": "accent",
-          "color": "rgba(110 231 183 / 1)",
+          "color": "rgba(74 222 128 / 1)",
           "name": "Accent"
         },
         {

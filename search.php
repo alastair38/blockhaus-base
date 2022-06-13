@@ -18,7 +18,7 @@ get_header();
 				<h1 class="has-gigantic-font-size font-black">
 					<?php
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'blockhaus' ), '<span class="underline decoration-emerald-300 decoration-4">' . get_search_query() . '</span>' );
+					printf( esc_html__( 'Search Results for: %s', 'blockhaus' ), '<span class="underline decoration-green-400 decoration-4">' . get_search_query() . '</span>' );
 					?>
 				</h1>
 				<?php get_search_form( );?>

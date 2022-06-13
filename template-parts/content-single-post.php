@@ -28,8 +28,6 @@
 	<div class="space-y-6">
 		<?php
 
-		echo get_option('stylesheet'); 
-		
 		the_content();
 
 		wp_link_pages(
@@ -43,7 +41,7 @@
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
-		<div class="entry-meta text-sm italic">
+		<div class="entry-meta italic">
 				<?php
 				blockhaus_posted_on();
 				blockhaus_posted_by();

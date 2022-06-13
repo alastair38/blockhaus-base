@@ -1,0 +1,24 @@
+/* SETTING SOME DEFAULTS FOR FIGURE / FIGCAPTION */
+
+p a {
+  @apply underline decoration-accent decoration-4;
+}
+
+address {
+  @apply not-italic;
+}
+
+figure img {
+  @apply object-cover;
+}
+
+figcaption {
+  @apply px-2 text-center;
+}
+
+/* PSEUDO STYLES FOR LINKS */
+
+.wp-block-button__link:active,
+.wp-block-button__link:visited {
+  color: var(--wp--preset--color--secondary);
+}

@@ -1,0 +1,208 @@
+/* FRONT PAGE */
+
+.blockhaus-gallery
+  .wp-block-gallery.has-nested-images
+  figure.wp-block-image
+  figcaption {
+  @apply bg-white bg-none p-1 text-gray-900;
+}
+
+[class*='blockhaus-profile'] img {
+  @apply w-full md:w-auto;
+}
+
+[class*='blockhaus-quote'] cite {
+  @apply bg-accent px-1 max-w-fit -rotate-1;
+}
+
+.blockhaus-search input[type='search'] {
+  @apply py-1 px-4 border border-current shadow-retro focus-visible:outline-none focus-visible:ring-green-400 focus-visible:ring-4;
+}
+
+.blockhaus-search label {
+  @apply sr-only;
+}
+
+.blockhaus-search button {
+  @apply shadow-retro border border-current;
+}
+
+blockquote.blockhaus-quote:before {
+  content: '\201C';
+  font-size: 8rem;
+  width: auto;
+  height: 100%;
+  display: flex;
+  padding: 1rem;
+  line-height: 100%;
+  align-items: top;
+  font-family: fantasy;
+  text-shadow: 2px 2px #4ade80;
+  position: absolute;
+  top: 0rem;
+  bottom: 0rem;
+  left: 0rem;
+}
+
+blockquote.blockhaus-quote:after {
+  content: '\201D';
+  font-size: 8rem;
+  width: auto;
+  height: 100%;
+  display: flex;
+  padding: 1rem;
+  line-height: 0;
+  align-items: flex-end;
+  font-family: fantasy;
+  text-shadow: 2px 2px #4ade80;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.grain-dots {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%230f0f0f' fill-opacity='.25' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+iframe {
+  @apply border-[6px] border-white rounded-md mx-auto;
+}
+
+@media (max-width: 640px) {
+  iframe {
+    @apply h-full;
+  }
+}
+
+.blockhaus-blog-posts {
+  grid-template-columns: 1fr 3fr;
+}
+
+.post-template-grid li {
+  @apply bg-white overflow-hidden m-0 flex flex-col rounded-md shadow-md;
+}
+
+.post-template-grid li a {
+  @apply inline-flex mt-auto;
+}
+
+.post-template-grid li h3 {
+  @apply leading-6;
+}
+
+.post-template-grid li img {
+  aspect-ratio: 5/3;
+  object-fit: cover;
+}
+
+.slanted {
+  clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+}
+
+.slanted-top {
+  clip-path: polygon(0% 10%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+#team-gallery figure {
+  position: relative;
+}
+
+#team-gallery figure figcaption {
+  position: absolute;
+  background: inherit;
+  font-size: 1rem;
+  bottom: 0.5rem;
+
+  right: 1.5rem;
+  transform: rotate(-1deg);
+}
+
+/* POSTS & PAGES */
+
+.is-style-button-retro .wp-block-button__link,
+.blog .entry-content a {
+  @apply shadow-retro;
+}
+
+.is-style-button-rounded .wp-block-button__link {
+  @apply rounded-full;
+}
+
+.wp-block-button__link:hover {
+  @apply text-secondary bg-white transition-colors duration-200;
+}
+
+.wp-block-button.bg-primary-default:hover {
+  @apply bg-transparent;
+}
+
+.wp-block-button.bg-primary-default:hover > .wp-block-button__link {
+  @apply bg-transparent;
+}
+
+.blog article img {
+  aspect-ratio: 4/3;
+}
+
+/* POST NAVIGATION STYLES */
+
+.post-navigation .nav-links {
+  @apply w-11/12 md:w-3/4 mx-auto my-8 flex justify-between;
+}
+
+.nav-previous a,
+.nav-next a {
+  @apply bg-offset shadow-retro px-2 py-1 border border-current flex items-center hover:bg-white;
+}
+
+.nav-next {
+  @apply ml-auto;
+}
+
+/* MOBILE NAVIGATION */
+
+[aria-expanded='true'] + .menu-primary-menu-container > ul#primary-menu {
+  transform: translateY(0%);
+  transition: 250ms;
+}
+
+/* SOCIAL LNKS BLOCKS */
+
+.wp-block-social-links.is-style-logos-only .wp-social-link {
+  @apply text-secondary;
+}
+
+/* LOGIN FORM */
+
+form#loginform {
+  @apply flex flex-col justify-center items-center gap-6;
+}
+
+form#loginform p {
+  @apply flex flex-col justify-center items-center gap-2;
+}
+
+form#loginform p.login-remember label {
+  @apply flex items-center gap-2 flex-row-reverse cursor-pointer mt-6;
+}
+
+form#loginform label {
+  @apply text-base;
+}
+
+form#loginform [type='checkbox'] {
+  @apply text-accent rounded-full w-6 h-6 focus:ring-accent;
+}
+
+form#loginform [type='password'] {
+  @apply py-1 bg-white rounded-full border border-neutral-light-500;
+}
+
+form#loginform [type='text'] {
+  @apply bg-white rounded-full border border-neutral-light-500;
+}
+
+form#loginform input#wp-submit {
+  @apply bg-offset py-1 px-2 shadow-retro border border-current cursor-pointer;
+}
