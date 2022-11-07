@@ -19,27 +19,7 @@
 <!-- /wp:html --></div>
 <!-- /wp:group -->
 <div class="p-6 place-items-center bg-white">
-<div class="grid grid-cols-3 gap-20">
-
-
-<div class="p-6 rounded-md space-y-4">
-	<p class="font-black">Main links</p>
-	<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'footer-1',
-					'menu_id'        => 'footer-menu',
-					'menu_class'		 => 'flex flex-col'
-				)
-			);
-			?>
-</div>
-
-<div class="p-6 rounded-md space-y-4">
-	
-	<p class="font-black">Address</p>
-	<?php echo blockhaus_display_address(); ?>
-</div>
+<div>
 
 <div class="p-6 rounded-md space-y-4">
 	<p class="font-black">Follow us</p>
