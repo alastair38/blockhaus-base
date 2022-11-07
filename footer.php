@@ -19,14 +19,13 @@
 <!-- /wp:html --></div>
 <!-- /wp:group -->
 <div class="p-6 place-items-center bg-white">
-<div>
 
-<div class="p-6 rounded-md space-y-4">
+
+<div class="p-6 rounded-md space-y-4 flex flex-col items-center">
 	<p class="font-black">Follow us</p>
   <?php echo blockhaus_display_social_profiles();?>
 </div>
 
-</div>	
 
 <?php
 
