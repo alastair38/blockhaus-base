@@ -1,9 +1,5 @@
 /* SETTING SOME DEFAULTS FOR FIGURE / FIGCAPTION */
 
-p a {
-  @apply underline decoration-accent decoration-4;
-}
-
 address {
   @apply not-italic;
 }
@@ -14,6 +10,13 @@ figure img {
 
 figcaption {
   @apply px-2 text-center;
+}
+
+/* PROFILE BLOCK HOVER STYLES */
+
+[class*='blockhaus'] .wp-block-button__link,
+[class*='blockhaus'] .wp-block-read-more {
+  @apply hover:ring-4 hover:ring-offset focus:ring-4 focus:ring-offset;
 }
 
 /* PSEUDO STYLES FOR LINKS */

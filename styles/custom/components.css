@@ -7,12 +7,90 @@
   @apply bg-white bg-none p-1 text-gray-900;
 }
 
+.triangles-default:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 10%;
+  aspect-ratio: 1 / 1;
+  bottom: 1rem;
+  left: 1rem;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  background-color: var(--wp--preset--color--accent-secondary);
+  @apply bg-grain-dots rounded-bl-md;
+}
+
+.triangles-default:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 10%;
+  aspect-ratio: 1 / 1;
+  top: 1rem;
+  right: 1rem;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  background-color: var(--wp--preset--color--accent-secondary);
+  @apply bg-grain-dots rounded-tr-md;
+}
+
+.triangles-alternate:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 10%;
+  aspect-ratio: 1 / 1;
+  top: 1rem;
+  left: 1rem;
+  clip-path: polygon(100% 0, 0 0, 0 100%);
+  background-color: var(--wp--preset--color--accent-tertiary);
+  @apply bg-grain-dots rounded-tl-md;
+}
+
+.triangles-alternate:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 10%;
+  aspect-ratio: 1 / 1;
+  bottom: 1rem;
+  right: 1rem;
+  clip-path: polygon(100% 100%, 100% 0, 0 100%);
+  background-color: var(--wp--preset--color--accent-tertiary);
+  @apply bg-grain-dots rounded-br-md;
+}
+
+/* .blockhaus-mission:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 100px;
+  bottom: 1rem;
+  left: 1rem;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  background-color: var(--wp--preset--color--accent);
+  @apply bg-grain-dots rounded-bl-md;
+}
+
+.blockhaus-mission:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 100px;
+  top: 1rem;
+  right: 1rem;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  background-color: var(--wp--preset--color--accent);
+  @apply bg-grain-dots rounded-tr-md;
+} */
+
 [class*='blockhaus-profile'] img {
   @apply w-full md:w-auto;
 }
 
 [class*='blockhaus-quote'] cite {
-  @apply bg-accent px-1 max-w-fit -rotate-1;
+  @apply bg-primary-default px-2 rounded-full max-w-fit;
 }
 
 .blockhaus-search input[type='search'] {
@@ -24,7 +102,7 @@
 }
 
 .blockhaus-search button {
-  @apply shadow-retro border border-current;
+  @apply border border-current rounded-full;
 }
 
 blockquote.blockhaus-quote:before {
@@ -36,8 +114,8 @@ blockquote.blockhaus-quote:before {
   padding: 1rem;
   line-height: 100%;
   align-items: top;
-  font-family: fantasy;
-  text-shadow: 2px 2px #4ade80;
+  font-family: serif;
+  text-shadow: 2px 2px var(--wp--preset--color--accent);
   position: absolute;
   top: 0rem;
   bottom: 0rem;
@@ -53,8 +131,8 @@ blockquote.blockhaus-quote:after {
   padding: 1rem;
   line-height: 0;
   align-items: flex-end;
-  font-family: fantasy;
-  text-shadow: 2px 2px #4ade80;
+  font-family: serif;
+  text-shadow: 2px 2px var(--wp--preset--color--accent);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -120,8 +198,7 @@ iframe {
 
 /* POSTS & PAGES */
 
-.is-style-button-retro .wp-block-button__link,
-.blog .entry-content a {
+.is-style-button-retro .wp-block-button__link {
   @apply shadow-retro;
 }
 
@@ -153,7 +230,15 @@ iframe {
 
 .nav-previous a,
 .nav-next a {
-  @apply bg-offset shadow-retro px-2 py-1 border border-current flex items-center hover:bg-white;
+  @apply flex items-center text-neutral-dark-900 hover:translate-x-8 transition-all duration-150;
+}
+
+.nav-next a {
+  @apply hover:translate-x-2;
+}
+
+.nav-previous a {
+  @apply hover:-translate-x-2;
 }
 
 .nav-next {
@@ -192,7 +277,7 @@ form#loginform label {
 }
 
 form#loginform [type='checkbox'] {
-  @apply text-accent rounded-full w-6 h-6 focus:ring-accent;
+  @apply text-accent-default rounded-full w-6 h-6 focus:ring-accent-default;
 }
 
 form#loginform [type='password'] {

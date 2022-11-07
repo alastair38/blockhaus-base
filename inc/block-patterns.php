@@ -30,12 +30,12 @@ function blockhaus_register_patterns() {
           'header',
         ],
         'content'     => '<!-- wp:group {"tagName":"section","className":"grid grid-cols-1 md:grid-cols-hero place-items-center w-4/5 py-20 mx-auto","layout":{"inherit":true}} -->
-        <section class="wp-block-group grid grid-cols-1 md:grid-cols-hero place-items-center w-4/5 py-20 mx-auto"><!-- wp:image {"id":578,"sizeSlug":"landscape","linkDestination":"none","className":"md:col-span-2 md:col-start-1 md:row-start-1 size-landscape aspect-video rounded-md p-2 -rotate-2 z-0 image"} -->
-        <figure class="wp-block-image md:col-span-2 md:col-start-1 md:row-start-1 size-landscape aspect-video rounded-md p-2 -rotate-2 z-0 image"><img src="/wp-content/themes/blockhaus/assets/images/block-patterns/hero-header.jpg" alt="A woman sits in a doorway looking at her laptop" class="wp-image-578"/></figure>
+        <section class="wp-block-group grid grid-cols-1 md:grid-cols-hero place-items-center w-4/5 py-20 mx-auto"><!-- wp:image {"id":578,"sizeSlug":"landscape","linkDestination":"none","className":"md:col-span-2 md:col-start-1 md:row-start-1 size-landscape aspect-video rounded-md p-2 z-0 image"} -->
+        <figure class="wp-block-image md:col-span-2 md:col-start-1 md:row-start-1 size-landscape aspect-video rounded-md p-2 z-0 image"><img src="/wp-content/themes/blockhaus/assets/images/block-patterns/hero-header.jpg" alt="A woman sits in a doorway looking at her laptop" class="wp-image-578"/></figure>
         <!-- /wp:image -->
         
-        <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"className":"bg-offset md:col-span-2 md:col-start-2 md:row-start-1 space-y-2 lg:space-y-6 p-6 self-center z-10","layout":{"inherit":false}} -->
-        <div class="wp-block-group bg-offset md:col-span-2 md:col-start-2 md:row-start-1 space-y-2 lg:space-y-6 p-6 self-center z-10"><!-- wp:heading {"level":1,"className":"heading font-black leading-10","fontSize":"gigantic"} -->
+        <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"className":"backdrop-blur md:col-span-2 md:col-start-2 md:row-start-1 space-y-2 lg:space-y-6 p-6 self-center z-10","layout":{"inherit":false}} -->
+        <div class="wp-block-group backdrop-blur md:col-span-2 md:col-start-2 md:row-start-1 space-y-2 lg:space-y-6 p-6 self-center z-10"><!-- wp:heading {"level":1,"className":"heading font-black leading-10","fontSize":"gigantic"} -->
         <h1 class="heading font-black leading-10 has-gigantic-font-size">Discover NeurOx YPAG</h1>
         <!-- /wp:heading -->
         
@@ -55,8 +55,8 @@ function blockhaus_register_patterns() {
           'users',
         ],
          'content'     => '<!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"className":"blockhaus-profile flex-col md:flex-row flex gap-0 md:gap-12"} -->
-         <div class="wp-block-group blockhaus-profile flex-col md:flex-row flex gap-0 md:gap-12"><!-- wp:image {"id":458,"width":300,"height":300,"sizeSlug":"profile","linkDestination":"none","className":"aspect-square"} -->
-         <figure class="wp-block-image size-profile is-resized aspect-square"><img src="/wp-content/themes/blockhaus/assets/images/block-patterns/profile-image.jpg" alt="A close up of a young Asian man against a grey background" class="wp-image-458" width="300" height="300"/></figure>
+         <div class="wp-block-group blockhaus-profile flex-col md:flex-row flex gap-0 md:gap-12"><!-- wp:image {"id":458,"width":300,"height":300,"sizeSlug":"profile","linkDestination":"none","className":"aspect-square w-80 h-80"} -->
+         <figure class="wp-block-image size-profile is-resized aspect-square w-80 h-80"><img src="/wp-content/themes/blockhaus/assets/images/block-patterns/profile-image.jpg" alt="A close up of a young Asian man against a grey background" class="wp-image-458" width="300" height="300"/></figure>
          <!-- /wp:image -->
          
          <!-- wp:group {"className":"self-start md:self-center mt-0 md:mt-auto py-6 md:p-0 space-y-6"} -->
@@ -69,8 +69,8 @@ function blockhaus_register_patterns() {
          <!-- /wp:paragraph -->
          
          <!-- wp:buttons -->
-         <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-button-retro shadow-retro bg-offset"} -->
-         <div class="wp-block-button is-style-button-retro shadow-retro bg-offset"><a class="wp-block-button__link">View Profile</a></div>
+         <div class="wp-block-buttons"><!-- wp:button {"className":"rounded-full"} -->
+         <div class="wp-block-button rounded-full"><a class="wp-block-button__link">View Profile</a></div>
          <!-- /wp:button --></div>
          <!-- /wp:buttons --></div>
          <!-- /wp:group --></div>
@@ -96,14 +96,14 @@ function blockhaus_register_patterns() {
       <!-- /wp:paragraph -->
       
       <!-- wp:buttons -->
-      <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-button-retro shadow-retro bg-offset"} -->
-      <div class="wp-block-button is-style-button-retro shadow-retro bg-offset"><a class="wp-block-button__link">View Profile</a></div>
+      <div class="wp-block-buttons"><!-- wp:button {"className":"rounded-full"} -->
+      <div class="wp-block-button rounded-full"><a class="wp-block-button__link">View Profile</a></div>
       <!-- /wp:button --></div>
       <!-- /wp:buttons --></div>
       <!-- /wp:group -->
       
-      <!-- wp:image {"id":458,"width":300,"height":300,"sizeSlug":"profile","linkDestination":"none","className":"aspect-square"} -->
-      <figure class="wp-block-image size-profile is-resized aspect-square"><img src="/wp-content/themes/blockhaus/assets/images/block-patterns/profile-image.jpg" alt="A close up of a young Asian man against a grey background" class="wp-image-458" width="300" height="300"/></figure>
+      <!-- wp:image {"id":458,"width":300,"height":300,"sizeSlug":"profile","linkDestination":"none","className":"aspect-square w-80 h-80"} -->
+      <figure class="wp-block-image size-profile is-resized aspect-square w-80 h-80"><img src="/wp-content/themes/blockhaus/assets/images/block-patterns/profile-image.jpg" alt="A close up of a young Asian man against a grey background" class="wp-image-458" width="300" height="300"/></figure>
       <!-- /wp:image --></div>
       <!-- /wp:group -->',
   )
@@ -117,8 +117,8 @@ function blockhaus_register_patterns() {
         'callouts-and-quotes',
       ],
       'content'     => '
-      <!-- wp:group {"tagName":"section","className":"py-20 has-accent-background-color has-background slanted z-0 relative overflow-hidden"} -->
-      <section class="wp-block-group py-20 has-accent-background-color has-background slanted z-0 relative overflow-hidden"><!-- wp:heading {"textAlign":"center","fontSize":"huge"} -->
+      <!-- wp:group {"tagName":"section","className":"py-20 bg-curves bg-cover has-accent-background-color has-background slanted z-0 relative overflow-hidden"} -->
+      <section class="wp-block-group py-20 bg-curves bg-cover has-accent-background-color has-background slanted z-0 relative overflow-hidden"><!-- wp:heading {"textAlign":"center","fontSize":"huge"} -->
       <h2 class="has-text-align-center has-huge-font-size">What is YPAG?</h2>
       <!-- /wp:heading -->
 
@@ -176,7 +176,7 @@ function blockhaus_register_patterns() {
 
       <!-- wp:post-date {"className":"pb-6","fontSize":"small"} /-->
 
-      <!-- wp:read-more {"content":"View article","className":"bg-yellow-300 border border-current px-2 py-1 shadow-retro mt-auto"} /--></div>
+      <!-- wp:read-more {"content":"View article","className":"bg-accent border border-current px-2 py-1 rounded-full mt-auto"} /--></div>
       <!-- /wp:group -->
       <!-- /wp:post-template --></div>
       <!-- /wp:query --></section>
@@ -288,8 +288,8 @@ function blockhaus_register_patterns() {
             'callouts-and-quotes',
           ],
           'content' => '
-          <!-- wp:group {"className":"blockhaus-quote-image bg-gray-100 rounded-md flex flex-col items-center p-6 justify-center"} -->
-          <div class="wp-block-group blockhaus-quote-image bg-gray-100 rounded-md flex flex-col items-center p-6 justify-center"><!-- wp:image {"id":458,"width":150,"height":150,"sizeSlug":"thumbnail","linkDestination":"none","className":"is-style-default rounded-full aspect-square"} -->
+          <!-- wp:group {"className":"blockhaus-quote-image bg-neutral-light-100 rounded-md flex flex-col items-center p-6 justify-center"} -->
+          <div class="wp-block-group blockhaus-quote-image bg-neutral-light-100 rounded-md flex flex-col items-center p-6 justify-center"><!-- wp:image {"id":458,"width":150,"height":150,"sizeSlug":"thumbnail","linkDestination":"none","className":"is-style-default rounded-full aspect-square"} -->
           <figure class="wp-block-image size-thumbnail is-resized is-style-default rounded-full aspect-square"><img src="/wp-content/themes/blockhaus/assets/images/block-patterns/quote-with-image.jpg" alt="Dorothy Parker as a young woman" class="wp-image-458" width="150" height="150"/></figure>
           <!-- /wp:image -->
 
@@ -389,6 +389,21 @@ function blockhaus_register_patterns() {
               ',
             )
             );
+
+            register_block_pattern(
+              'blockhaus/wave-separator',
+              array(
+                  'title'       => __( 'Wave-shaped separator', 'blockhaus' ),
+                  'categories'    => [
+                    'users',
+                  ],
+                  'content'     => '<!-- wp:group {"className":"p-0 bg-neutral-light-100 text-secondary"} -->
+                  <div class="wp-block-group p-0 bg-neutral-light-100 text-secondary"><!-- wp:html -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220"><path fill="currentColor" fill-opacity="1" d="M0,64L60,58.7C120,53,240,43,360,58.7C480,75,600,117,720,128C840,139,960,117,1080,112C1200,107,1320,117,1380,122.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+                  <!-- /wp:html --></div>
+                  <!-- /wp:group -->',
+              )
+            ); 
 
         endif;
       

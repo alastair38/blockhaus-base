@@ -1,7 +1,7 @@
 /* WP FORMS OVERRIDES */
 
 form.wpforms-form {
-  @apply bg-white p-6 rounded-md shadow-md;
+  @apply bg-white p-6 rounded-md border border-accent-default;
 }
 
 input[type='text'],
@@ -11,6 +11,5 @@ textarea {
 }
 
 .wpforms-form button[type='submit'] {
-  box-shadow: 2px 2px 0 0 currentColor;
-  @apply bg-yellow-300 px-3 py-1 border-2 border-current;
+  @apply px-3 py-1 border hover:bg-primary-default focus:bg-primary-default border-current rounded-full bg-neutral-light-100;
 }

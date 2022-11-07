@@ -11,12 +11,19 @@
 
 ?>
 
-	<footer id="colophon" class="px-6 pt-20 place-items-center bg-white">
+<footer id="colophon">
+
+<!-- wp:group {"backgroundColor":"neutral-light-100","textColor":"primary-default","className":"p-0 bg-neutral-light-100 text-secondary"} -->
+<div class="wp-block-group p-0 bg-neutral-light-100 text-secondary has-primary-default-color has-neutral-light-100-background-color has-text-color has-background"><!-- wp:html -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220"><path fill="currentColor" fill-opacity="1" d="M0,64L60,58.7C120,53,240,43,360,58.7C480,75,600,117,720,128C840,139,960,117,1080,112C1200,107,1320,117,1380,122.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+<!-- /wp:html --></div>
+<!-- /wp:group -->
+<div class="p-6 place-items-center bg-white">
 <div class="grid grid-cols-3 gap-20">
 
 
 <div class="p-6 rounded-md space-y-4">
-	<p class="px-2 -rotate-1 bg-accent w-fit">Main links</p>
+	<p class="font-black">Main links</p>
 	<?php
 			wp_nav_menu(
 				array(
@@ -30,12 +37,12 @@
 
 <div class="p-6 rounded-md space-y-4">
 	
-	<p class="px-2 -rotate-1 bg-accent w-fit">Address</p>
+	<p class="font-black">Address</p>
 	<?php echo blockhaus_display_address(); ?>
 </div>
 
 <div class="p-6 rounded-md space-y-4">
-	<p class="px-2 -rotate-1 bg-accent w-fit">Follow us</p>
+	<p class="font-black">Follow us</p>
   <?php echo blockhaus_display_social_profiles();?>
 </div>
 
@@ -84,6 +91,8 @@ endif;
 				printf( esc_html_e( bloginfo('name') . ' &copy; ' . date("Y") , 'Blockhaus' ), 'Blockhaus' );
 				?>
 </p>
+
+</div>
 
 	</footer><!-- #colophon -->
 </div><!-- #page -->

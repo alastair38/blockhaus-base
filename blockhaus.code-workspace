@@ -1,0 +1,14 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "..\\..\\plugins\\blockhaus-cpt"
+	},
+	{
+		"path": "..\\..\\plugins\\blockhaus-functionality"
+	}
+],
+  "settings": {}
+}

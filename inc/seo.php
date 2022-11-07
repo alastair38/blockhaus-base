@@ -18,8 +18,8 @@ function blockhaus_meta_description() {
       echo '<meta name="description" content="' . $post_description . '" />' . "\n";
   }
   
-  if ( is_home() ) {
-  		$blog_page_description = get_field("blog_page_description", "options");
+  if ( is_home() && !is_front_page() ) {
+  		$blog_page_description = get_field("post_page_description", "options");
       if($blog_page_description):
   		$blog_page_description = strip_tags($blog_page_description);
   		$blog_page_description = normalize_whitespace($blog_page_description);
@@ -74,3 +74,39 @@ function blockhaus_meta_description() {
     }
 }
 add_action( 'wp_head', 'blockhaus_meta_description');
+
+function blockhaus_opengraph() {
+  global $post;
+    if(is_singular()) {
+    if(has_post_thumbnail($post->ID)) {
+    $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'large');
+    $img = $img_src[0];
+    } else {
+    $default_img = get_field(get_post_type() . '_header', 'options');
+    $img = $default_img['url'];
+    }
+    if(has_excerpt()) {
+    $excerpt = strip_tags($post->post_excerpt);
+    $excerpt = str_replace("", "'", $excerpt);
+    } else {
+    $excerpt = get_bloginfo('description');
+    }
+    ?>
+    <meta property="og:title" content="<?php echo the_title(); ?>"/>
+    <meta property="og:description" content="<?php echo $excerpt; ?>"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
+    <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
+    <meta property="og:image" content="<?php echo $img; ?>"/>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="<?php echo the_permalink(); ?>" />
+    <meta name="twitter:title" content="<?php echo the_title(); ?>" />
+    <meta name="twitter:description" content="<?php echo $excerpt; ?>" />
+    <meta name="twitter:image" content="<?php echo $img_src[0]; ?>" />
+    <?php
+    } else {
+    return;
+    }
+  }
+
+  add_action('wp_head', 'blockhaus_opengraph', 10);

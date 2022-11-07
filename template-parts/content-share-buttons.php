@@ -11,7 +11,7 @@
 
 <div class="blockhaus-social-share p-6 flex items-center justify-center gap-4 bg-gray-100 rounded-md">
 
-<p class="bg-yellow-300 px-2 -rotate-2">Share this</p>
+<p class="sr-only">Share this</p>
 
 <ul class="flex gap-6 px-6 justify-center">
 	<li>

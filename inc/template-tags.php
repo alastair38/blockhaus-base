@@ -110,8 +110,8 @@ if ( ! function_exists( 'blockhaus_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail( $size, array( 'class' => 'aspect-video w-full object-cover' ) ); ?>
+			<div class="post-thumbnail h-full">
+				<?php the_post_thumbnail( $size, array( 'class' => 'aspect-video h-full w-full object-cover' ) ); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
@@ -119,10 +119,11 @@ if ( ! function_exists( 'blockhaus_post_thumbnail' ) ) :
 				<?php
 					the_post_thumbnail(
 						$size,
-						'post-thumbnail',
 						array(
+							'class' => 'w-full object-cover',
 							'alt' => the_title_attribute(
 								array(
+									
 									'echo' => false,
 								)
 							),
@@ -233,8 +234,8 @@ function blockhaus_post_edit_link()  {
 
 		$page_id = get_queried_object_id();
 		
-		if(current_user_can( 'edit_post', $page_id )):
-		echo '<a class="flex gap-2 relative group items-center p-2 bg-neutral-light-100 hover:bg-neutral-light-500 focus:bg-neutral-light-500 rounded-full border border-current" href="' . esc_url( get_edit_post_link() ) . '">
+		if(current_user_can( 'edit_post', $page_id ) && !is_post_type_archive()):
+		echo '<a class="flex gap-2 relative group items-center p-2 bg-neutral-light-100 hover:bg-neutral-light-500 focus:bg-neutral-light-500 rounded-full border border-current" href="' . esc_url( get_edit_post_link($page_id) ) . '">
 			<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 			<path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
 			</svg>

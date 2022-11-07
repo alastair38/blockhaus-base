@@ -10,9 +10,9 @@
           "name": "Primary"
         },
         {
-          "slug": "primary-offset",
+          "slug": "offset",
           "color": "rgba(253 224 71 / 1)",
-          "name": "Primary Offset"
+          "name": "Offset"
         },
         {
           "slug": "secondary",
@@ -21,13 +21,28 @@
         },
         {
           "slug": "accent",
-          "color": "rgba(74 222 128 / 1)",
+          "color": "rgba(0 20 137 / 1)",
           "name": "Accent"
         },
         {
+          "slug": "accent-secondary",
+          "color": "rgba(222 56 49 / 1)",
+          "name": "Secondary Accent"
+        },
+        {
+          "slug": "accent-tertiary",
+          "color": "rgba(19 171 114 / 1)",
+          "name": "Tertiary Accent"
+        },
+        {
           "slug": "highlight",
-          "color": "rgba(37 99 235 / 1)",
+          "color": "rgba(34 188 226 / 1)",
           "name": "Highlight"
+        },
+        {
+          "slug": "light-opacity",
+          "color": "rgba(255 255 255 / .75)",
+          "name": "Light with Opacity"
         },
         {
           "slug": "neutral-light-900",
@@ -188,12 +203,12 @@
     "elements": {
       "h1": {
         "color": {
-          "text": "var(--wp--preset--color--secondary)"
+          "text": "var(--wp--preset--color--accent)"
         }
       },
       "h2": {
         "color": {
-          "text": "var(--wp--preset--color--secondary)"
+          "text": "var(--wp--preset--color--accent)"
         }
       }
     },
