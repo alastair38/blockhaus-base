@@ -34,6 +34,7 @@ module.exports = {
           default: 'var(--wp--preset--color--accent)',
           secondary: 'var(--wp--preset--color--accent-secondary)',
           tertiary: 'var(--wp--preset--color--accent-tertiary)',
+          quarter: 'var(--wp--preset--color--accent-quarter)',
         },
         highlight: 'var(--wp--preset--color--highlight)',
         'light-opacity': 'var(--wp--preset--color--light-opacity)',

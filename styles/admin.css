@@ -1,6 +1,6 @@
 /* ADMIN STYLES */
 :root {
-  --wp--preset--color--accent: rgba(0 20 137 / 1);
+  --wp--preset--color--accent-quarter: rgba(210 175 255 / 1);
   --wp--preset--color--accent-secondary: rgba(238 101 179 / 1);
   --wp--preset--color--accent-tertiary: rgba(167 217 212 / 1);
   --wp--preset--color--secondary: rgba(41 44 44 / 1);
@@ -42,8 +42,8 @@ bg-accent-tertiary*/
   background-color: var(--wp--preset--color--offset);
 }
 
-.color-switcher .selected input[type='radio'][value='accent']:after {
-  background-color: var(--wp--preset--color--accent);
+.color-switcher .selected input[type='radio'][value='accent-quarter']:after {
+  background-color: var(--wp--preset--color--accent-quarter);
 }
 
 .color-switcher .selected input[type='radio'][value='highlight']:after {
@@ -62,8 +62,8 @@ bg-accent-tertiary*/
   background-color: var(--wp--preset--color--offset);
 }
 
-.color-switcher input[type='radio'][value='accent'] {
-  background-color: var(--wp--preset--color--accent);
+.color-switcher input[type='radio'][value='accent-quarter'] {
+  background-color: var(--wp--preset--color--accent-quarter);
 }
 
 .color-switcher input[type='radio'][value='highlight'] {

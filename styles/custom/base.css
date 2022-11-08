@@ -37,3 +37,9 @@ main {
 ::selection {
   @apply bg-highlight;
 }
+
+/* Navigation fix for Safari */
+
+#primary-menu li {
+  @apply py-4 lg:py-0 lg:px-4;
+}

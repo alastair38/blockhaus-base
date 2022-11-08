@@ -35,6 +35,11 @@
           "name": "Tertiary Accent"
         },
         {
+          "slug": "accent-quarter",
+          "color": "rgba(210 175 255 / 1)",
+          "name": "Quarter Accent"
+        },
+        {
           "slug": "highlight",
           "color": "rgba(64 206 229 / 1)",
           "name": "Highlight"
