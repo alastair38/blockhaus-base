@@ -43,3 +43,7 @@ main {
 #primary-menu li {
   @apply py-4 lg:py-0 lg:px-4;
 }
+
+#primary-menu li a {
+  @apply text-accent-default;
+}

@@ -59,7 +59,7 @@
   </defs>
   <ellipse style="fill: url(#pattern-0-0); paint-order: fill;" cx="359.322" cy="305.085" rx="442.242" ry="442.242" transform="matrix(0.999951, -0.009903, 0.009903, 0.999951, 87.67437, 148.488342)"/>
 </svg> -->
-				<span class="has-extra-large-font-size font-black"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+				<span class="has-extra-large-font-size font-black"><a class="text-accent-default" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
 			
 		</div><!-- .site-branding -->
 

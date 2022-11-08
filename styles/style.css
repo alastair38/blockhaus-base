@@ -717,6 +717,10 @@ main {
   }
 }
 
+#primary-menu li a {
+  color: var(--wp--preset--color--accent);
+}
+
 .container {
   width: 100%;
 }
@@ -2252,6 +2256,10 @@ input[type='text'], input[type='email'], textarea {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-accent-default {
+  color: var(--wp--preset--color--accent);
 }
 
 .text-primary-default {
