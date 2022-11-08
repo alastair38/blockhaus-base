@@ -1908,10 +1908,6 @@ input[type='text'], input[type='email'], textarea {
   gap: 1rem;
 }
 
-.gap-20 {
-  gap: 5rem;
-}
-
 .gap-12 {
   gap: 3rem;
 }

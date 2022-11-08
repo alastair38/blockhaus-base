@@ -1,11 +1,11 @@
 /* ADMIN STYLES */
 :root {
   --wp--preset--color--accent: rgba(0 20 137 / 1);
-  --wp--preset--color--accent-secondary: rgba(222 56 49 / 1);
-  --wp--preset--color--accent-tertiary: rgba(19 171 114 / 1);
+  --wp--preset--color--accent-secondary: rgba(238 101 179 / 1);
+  --wp--preset--color--accent-tertiary: rgba(167 217 212 / 1);
   --wp--preset--color--secondary: rgba(41 44 44 / 1);
   --wp--preset--color--offset: rgba(253 224 71 / 1);
-  --wp--preset--color--highlight: rgba(34 188 226 / 1);
+  --wp--preset--color--highlight: rgba(64 206 229 / 1);
   --wp--preset--color--neutral-light-100: rgba(244 244 244 / 1);
   --wp--preset--color--neutral-light-900: rgba(200 200 200 / 1);
   --wp--preset--color--neutral-dark-100: rgba(35 41 41 / 1);

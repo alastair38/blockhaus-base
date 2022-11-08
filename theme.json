@@ -26,17 +26,17 @@
         },
         {
           "slug": "accent-secondary",
-          "color": "rgba(222 56 49 / 1)",
+          "color": "rgba(238 101 179 / 1)",
           "name": "Secondary Accent"
         },
         {
           "slug": "accent-tertiary",
-          "color": "rgba(19 171 114 / 1)",
+          "color": "rgba(167 217 212 / 1)",
           "name": "Tertiary Accent"
         },
         {
           "slug": "highlight",
-          "color": "rgba(34 188 226 / 1)",
+          "color": "rgba(64 206 229 / 1)",
           "name": "Highlight"
         },
         {
