@@ -31,7 +31,7 @@
 
 // Check rows exists.
 if( have_rows('details', 'option') ):?>
-<div class="py-12">
+
 	<ul class="flex gap-12 justify-center p-6 w-3/4 mx-auto">
 <?php	// Loop through rows.
 	while( have_rows('details', 'option') ) : the_row();
@@ -62,7 +62,7 @@ endif;
 
 ?>
 	</ul>
-	</div>
+
 <p class="flex justify-center p-6">
 		<?php
 				/* translators: 1: Theme name, 2: Theme author. */
