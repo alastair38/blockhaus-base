@@ -32,7 +32,6 @@
 // Check rows exists.
 if( have_rows('details', 'option') ):?>
 <div class="py-12">
-<p class="font-bold text-center">Funders</p>
 	<ul class="flex gap-12 justify-center p-6 w-3/4 mx-auto">
 <?php	// Loop through rows.
 	while( have_rows('details', 'option') ) : the_row();
