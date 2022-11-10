@@ -16,7 +16,7 @@ figcaption {
 
 [class*='blockhaus'] .wp-block-button__link,
 [class*='blockhaus'] .wp-block-read-more {
-  @apply hover:ring-4 hover:ring-offset focus:ring-4 focus:ring-offset;
+  @apply hover:ring-4 hover:ring-highlight focus:ring-4 focus:ring-highlight;
 }
 
 /* PSEUDO STYLES FOR LINKS */

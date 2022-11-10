@@ -16,8 +16,8 @@
   bottom: 1rem;
   left: 1rem;
   clip-path: polygon(0 0, 100% 100%, 0 100%);
-  background-color: var(--wp--preset--color--accent-secondary);
-  @apply bg-grain-dots rounded-bl-md;
+  /* background-color: var(--wp--preset--color--accent-secondary); */
+  @apply bg-grain-dots bg-highlight rounded-bl-md;
 }
 
 .triangles-default:before {
@@ -29,8 +29,7 @@
   top: 1rem;
   right: 1rem;
   clip-path: polygon(100% 0, 0 0, 100% 100%);
-  background-color: var(--wp--preset--color--accent-secondary);
-  @apply bg-grain-dots rounded-tr-md;
+  @apply bg-grain-dots bg-highlight rounded-tr-md;
 }
 
 .triangles-alternate:after {

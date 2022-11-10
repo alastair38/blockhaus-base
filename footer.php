@@ -18,10 +18,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220"><path fill="currentColor" fill-opacity="1" d="M0,64L60,58.7C120,53,240,43,360,58.7C480,75,600,117,720,128C840,139,960,117,1080,112C1200,107,1320,117,1380,122.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
 <!-- /wp:html --></div>
 <!-- /wp:group -->
-<div class="p-6 place-items-center bg-white">
+<div class="place-items-center bg-primary-default">
 
 
-<div class="p-6 rounded-md space-y-4 flex flex-col items-center">
+<div class="rounded-md space-y-4 flex flex-col items-center">
 	<p class="font-black">Follow us</p>
   <?php echo blockhaus_display_social_profiles();?>
 </div>
@@ -63,7 +63,7 @@ endif;
 ?>
 	</ul>
 
-<p class="flex justify-center p-6">
+<p class="flex justify-center text-sm p-6">
 		<?php
 				/* translators: 1: Theme name, 2: Theme author. */
 				printf( esc_html_e( bloginfo('name') . ' &copy; ' . date("Y") , 'Blockhaus' ), 'Blockhaus' );

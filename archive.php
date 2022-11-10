@@ -23,7 +23,7 @@ endif;
 ?>
 
 	<!-- <main id="primary" class="pt-20 lg:p-6 bg-primary-default my-12 rounded-md w-11/12 md:w-3/4 mx-auto grid-cols-1 md:grid-cols-3 gap-6"> -->
-		<main class="main-content lg:pb-20">
+		<main class="main-content">
 
 			<!-- <header class="col-span-full"> -->
 
@@ -42,9 +42,13 @@ endif;
 			<?php endif;
 			endif; ?>
 			</header><!-- .page-header -->
+	<!-- 		<div class="wp-block-group p-0 has-<?php echo $background;?>-background-color has-background text-neutral-light-100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220"><path fill="currentColor" fill-opacity="1" d="M0,64L60,58.7C120,53,240,43,360,58.7C480,75,600,117,720,128C840,139,960,117,1080,112C1200,107,1320,117,1380,122.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+<!-- /wp:html </div>-->
+<!-- /wp:group -->
 
 
-			<div class="p-6 bg-primary-default grid my-12 rounded-md w-11/12 md:w-3/4 mx-auto grid-cols-1 <?php echo $cols;?> gap-6">
+			<div class="p-6 my-12 bg-primary-default grid rounded-md w-11/12 md:w-3/4 mx-auto grid-cols-1 <?php echo $cols;?> gap-6">
 				
 			<?php $description = get_field(get_post_type() . '_page_description', "options");
 
