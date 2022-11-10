@@ -13,6 +13,10 @@
  */
 
 get_header();
+
+$header_image = get_field(get_post_type() . '_header', 'options');
+$transparent =  get_field(get_post_type() . '_page_transparent_header', 'options');
+$background =  get_field(get_post_type() . '_choose_background', 'options');
 ?>
 
 	<!-- <main id="primary" class="pt-20 lg:p-6 bg-primary-default my-12 rounded-md w-11/12 md:w-3/4 mx-auto grid-cols-1 md:grid-cols-3 gap-6"> -->
@@ -24,12 +28,7 @@ get_header();
 
 			if ( is_home() && ! is_front_page() ) :?>
 			
-			<header class="entry-header grid grid-cols-header relative h-80 bg-curves bg-accent-tertiary bg-fixed bg-cover overflow-hidden">
-
-				<?php 
-				$header_image = get_field(get_post_type() . '_header', 'options');
-				$transparent =  get_field(get_post_type() . '_page_transparent_header', 'options');?>
-
+			<header class="entry-header grid grid-cols-header relative h-80 has-<?php echo $background;?>-background-color has-background bg-curves bg-fixed bg-cover overflow-hidden">
 
 				<h1 class="page-title z-0 mb-6 w-fit col-start-2 row-start-1 place-self-end justify-self-start bg-white has-gigantic-font-size px-6 font-black uppercase font-sans"><?php single_post_title();?></h1>
 				<?php 
