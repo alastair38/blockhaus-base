@@ -44,10 +44,10 @@ add_filter( 'pre_get_posts', 'include_cpt_search' );
 /* Custom Form allows more control over output that using search block */
 
 function blockhaus_custom_form($placeholder) {
-	$form = '<form role="search" method="get" class="search-form text-sm leading-6 flex py-1 px-2 bg-primary-default rounded-full border border-neutral-light-100 focus-within:border-secondary gap-2" action="' . home_url( '/' ) . '">
-	<label>
+	$form = '<form role="search" method="get" class="search-form w-full lg:w-1/2 text-sm leading-6 flex py-1 px-2 bg-primary-default rounded-full border border-neutral-light-100 focus-within:border-secondary gap-2" action="' . home_url( '/' ) . '">
+	<label class="w-full">
 		<span class="screen-reader-text">Search for:</span>
-		<input type="search" class="search-field w-32 border-none ring-transparent focus:ring-transparent focus:shadow-none focus:border-none py-0 px-2 text-sm focus-visible:outline-none" placeholder="' . $placeholder . '" value="' . get_search_query() . '" name="s">
+		<input type="search" class="search-field w-full border-none ring-transparent focus:ring-transparent focus:shadow-none focus:border-none py-0 px-2 text-sm focus-visible:outline-none" placeholder="' . $placeholder . '" value="' . get_search_query() . '" name="s">
 	</label>
 	<button type="submit" class="search-submit px-2 bg-accent-default text-primary-default rounded-full hover:bg-neutral-dark-500 transition-colors duration-200 cursor-pointer" aria-label="Submit search" value="Search">
     <svg class="fill-primary-default" aria-hidden="true" focusable="false" id="search-icon" class="search-icon" viewBox="0 0 24 24" width="24" height="24">

@@ -58,9 +58,9 @@ if ( ! function_exists( 'blockhaus_infinite_scroll_render' ) ) :
 		while ( have_posts() ) {
 			the_post();
 			if ( is_search() ) :
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part( 'layouts/content', 'search' );
 			else :
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'layouts/content', get_post_type() );
 			endif;
 		}
 	}

@@ -9,17 +9,17 @@
  * Add search bar to main navigation
  */
 
-function add_searchbar_box( $items, $args )
-{
-    if($args->theme_location == 'menu-1')
-    {
-      $items .= '<li>' . blockhaus_custom_form('Search ...') . '</li>';
-    }
+// function add_searchbar_box( $items, $args )
+// {
+//     if($args->theme_location == 'menu-1')
+//     {
+//       $items .= '<li>' . blockhaus_custom_form('Search ...') . '</li>';
+//     }
 
-    return $items;
-}
+//     return $items;
+// }
 
-add_filter( 'wp_nav_menu_items', 'add_searchbar_box', 10, 2);
+// add_filter( 'wp_nav_menu_items', 'add_searchbar_box', 10, 2);
 
 
 /**

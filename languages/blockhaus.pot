@@ -142,7 +142,7 @@ msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
 #: inc/template-tags.php:100
-#: template-parts/content-page.php:39
+#: layouts/content-page.php:39
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
@@ -170,29 +170,29 @@ msgstr ""
 msgid "Next:"
 msgstr ""
 
-#: template-parts/content-none.php:14
+#: layouts/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
 
 #. translators: 1: link to WP admin new post page.
-#: template-parts/content-none.php:24
+#: layouts/content-none.php:24
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:37
+#: layouts/content-none.php:37
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:44
+#: layouts/content-none.php:44
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:25
-#: template-parts/content.php:53
+#: layouts/content-page.php:25
+#: layouts/content.php:53
 msgid "Pages:"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content.php:40
+#: layouts/content.php:40
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
