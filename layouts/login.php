@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="p-6 w-11/12 md:w-3/4 bg-white rounded-md mx-auto space-y-6">
+<article id="post-<?php the_ID(); ?>" class="p-6 w-11/12 md:w-3/4 bg-primary-default rounded-md mx-auto space-y-6">
 	<header class="entry-header sr-only">
 		<?php 
 		if( !is_user_logged_in()): 
@@ -20,8 +20,6 @@
 		?>
 		
 	</header><!-- .entry-header -->
-
-	
 
 	<div class="space-y-6">
 		<div class="bg-neutral-light-100 p-20 rounded-md">
@@ -47,12 +45,6 @@
 			<a class="bg-offset py-1 px-2 border border-current shadow-retro" href="' . esc_url( wp_logout_url() ) . '">Logout</a></div>';
 		}
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blockhaus' ),
-				'after'  => '</div>',
-			)
-		);
 		?>
 		</div>
 	</div><!-- .entry-content -->

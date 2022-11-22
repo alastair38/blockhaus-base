@@ -10,6 +10,7 @@
 ?>
 
 <div id="post-<?php the_ID(); ?>">
+
 	<header class="entry-header screen-reader-text">
 		<?php the_title( '<h1>', '</h1>' ); ?>
 	</header><!-- .entry-header -->

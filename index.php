@@ -29,7 +29,7 @@ $description = get_field(get_post_type() . '_page_description', "options");
 
 				<div class="pt-20 lg:p-6 bg-primary-default grid my-12 rounded-md w-11/12 md:w-3/4 mx-auto grid-cols-1 md:grid-cols-3 gap-6">
 
-				<div class="col-span-full"><?php echo blockhaus_custom_form("Search News & Events ..."); ?></div>
+				<div class="col-span-full"><?php echo blockhaus_custom_form('News and Events', 'post'); ?></div>
 
 				<?php
 				

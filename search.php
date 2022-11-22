@@ -12,7 +12,7 @@ get_header();
 
 	<main id="primary" class="main-content space-y-6 md:space-y-12 mb-12">
 
-	<?php get_template_part('components/content', 'full-width-header'); ?>
+	<?php get_template_part('components/full-width-header'); ?>
 
 		<?php if ( have_posts() ) : 
 		
@@ -48,5 +48,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

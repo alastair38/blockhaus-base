@@ -9,9 +9,8 @@
 
 $post_type = get_post_type();
 
-$post_type_obj = get_post_type_object( $post_type );
 
-if(is_archive()):
+if(is_archive() && ! is_search()):
 	$header_image = get_field($post_type . '_header', 'options');
 	$transparent_image = get_field($post_type . '_page_transparent_header', 'options');
 	$background =  get_field($post_type . '_choose_background', 'options');

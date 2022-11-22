@@ -17,11 +17,8 @@ endif;
 ?>
 	<header class="entry-header">
 		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
+		
 			the_title( '<h2 class="text-lg font-bold">', '</h2>' );
-		endif;
 
 		if ( 'post' === get_post_type() ) :
 			?>
@@ -47,7 +44,6 @@ endif;
 
 		endif;
 
-		
 	
 		$external_site = get_field('external_site');
 
@@ -60,20 +56,8 @@ endif;
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-	<?php
-	
-	$external_link = get_field('external_link');
 
-	if($external_link):
-	?>
-
-	<a class="py-1 px-4 border border-current inline-flex transition-colors duration-200 rounded-full hover:ring-4 hover:ring-offset focus:ring-4 focus:ring-offset" href="<?php echo esc_url( $external_link );?>" rel="external">View <?php echo get_post_type();?></a>
-
-	<?php else:?>
-
-	<a class="py-1 px-4 border border-current inline-flex transition-colors duration-200 rounded-full hover:ring-4 hover:ring-offset focus:ring-4 focus:ring-offset" href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">View <?php echo get_post_type();?></a>
-
-	<?php endif;?>
-		<!-- <?php blockhaus_entry_footer(); ?> -->
+		<?php get_template_part('components/permalink'); ?>
+		
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
