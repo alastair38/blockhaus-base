@@ -7,6 +7,33 @@
   @apply bg-white bg-none p-1 text-gray-900;
 }
 
+#hero-curves {
+  @apply row-start-1 z-10 place-self-end;
+}
+
+.grid-hero figure,
+.grid-hero figure img {
+  @apply h-96 md:h-[90vh] object-cover;
+}
+
+.grid-hero {
+  grid-template-columns: 3fr 3rem 2fr;
+  grid-template-rows: 24rem;
+}
+
+.grid-hero .hero-content {
+  @apply mx-4;
+}
+
+@media (min-width: 768px) {
+  .grid-hero {
+    grid-template-rows: 85vh;
+  }
+  .grid-hero .hero-content {
+    @apply mx-auto;
+  }
+}
+
 .triangles-default:after {
   content: '';
   position: absolute;

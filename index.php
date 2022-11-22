@@ -27,7 +27,7 @@ $description = get_field(get_post_type() . '_page_description', "options");
 
 			if ( is_home() && ! is_front_page() ) :?>
 
-				<div class="pt-20 lg:p-6 bg-primary-default grid my-12 rounded-md w-11/12 md:w-3/4 mx-auto grid-cols-1 md:grid-cols-3 gap-6">
+				<div class="py-6 px-2 lg:p-6 bg-primary-default grid my-6 lg:my-12 rounded-md w-11/12 md:w-3/4 mx-auto grid-cols-1 md:grid-cols-3 gap-6">
 
 				<div class="col-span-full"><?php echo blockhaus_custom_form('News and Events', 'post'); ?></div>
 
@@ -37,7 +37,7 @@ $description = get_field(get_post_type() . '_page_description', "options");
 
 			if($description):?>
 
-			<p class="py-6 col-span-full"><?php echo $description . $post_type;?></p>
+			<p class="col-span-full"><?php echo $description . $post_type;?></p>
 
 			<?php endif;
 

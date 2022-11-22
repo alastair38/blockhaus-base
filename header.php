@@ -33,7 +33,7 @@
 	<header id="masthead" class="bg-primary-default fixed top-0 left-0 right-0 z-50 p-2 lg:relative flex justify-between lg:p-6 items-center">
 		<div class="flex items-center gap-2">
 
-    <svg class="h-12 w-12" viewBox="22.363 31.029 807.334 807.334" width="807.334px" height="807.334px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:bx="https://boxy-svg.com">
+    <svg class="w-9 h-9 md:h-12 md:w-12" viewBox="22.363 31.029 807.334 807.334" width="807.334px" height="807.334px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:bx="https://boxy-svg.com">
   <defs>
     <pattern id="pattern-2-0" patternTransform="matrix(9.943775, -2.106625, 2.222686, 10.491615, -143.403405, 4.558059)" xlink:href="#pattern-2"/>
     <pattern id="pattern-2" viewBox="0 0 900 898.187" patternUnits="userSpaceOnUse" preserveAspectRatio="none" width="100" height="100" bx:pinned="true">

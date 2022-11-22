@@ -769,6 +769,45 @@ main {
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
+#hero-curves {
+  z-index: 10;
+  grid-row-start: 1;
+  place-self: end;
+}
+
+.grid-hero figure, .grid-hero figure img {
+  height: 24rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .grid-hero figure, .grid-hero figure img {
+    height: 90vh;
+  }
+}
+
+.grid-hero {
+  grid-template-columns: 3fr 3rem 2fr;
+  grid-template-rows: 24rem;
+}
+
+.grid-hero .hero-content {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid-hero {
+    grid-template-rows: 85vh;
+  }
+
+  .grid-hero .hero-content {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .triangles-default:after {
   content: '';
   position: absolute;
@@ -1680,6 +1719,11 @@ input[type='text'], input[type='email'], textarea {
   margin-right: auto;
 }
 
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .my-12 {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -1715,10 +1759,6 @@ input[type='text'], input[type='email'], textarea {
 
 .mb-6 {
   margin-bottom: 1.5rem;
-}
-
-.ml-\[12\.5\%\] {
-  margin-left: 12.5%;
 }
 
 .-mr-6 {
@@ -1757,8 +1797,8 @@ input[type='text'], input[type='email'], textarea {
   height: 100%;
 }
 
-.h-12 {
-  height: 3rem;
+.h-9 {
+  height: 2.25rem;
 }
 
 .h-10 {
@@ -1807,8 +1847,8 @@ input[type='text'], input[type='email'], textarea {
   width: 91.666667%;
 }
 
-.w-12 {
-  width: 3rem;
+.w-9 {
+  width: 2.25rem;
 }
 
 .w-1\/2 {
@@ -1976,6 +2016,10 @@ input[type='text'], input[type='email'], textarea {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.break-words {
+  overflow-wrap: break-word;
 }
 
 .rounded-md {
@@ -2175,10 +2219,6 @@ input[type='text'], input[type='email'], textarea {
 
 .pb-6 {
   padding-bottom: 1.5rem;
-}
-
-.pt-20 {
-  padding-top: 5rem;
 }
 
 .pl-2 {
@@ -2536,6 +2576,10 @@ figcaption {
     aspect-ratio: auto;
   }
 
+  .md\:h-12 {
+    height: 3rem;
+  }
+
   .md\:w-4\/5 {
     width: 80%;
   }
@@ -2548,8 +2592,8 @@ figcaption {
     width: 75%;
   }
 
-  .md\:grid-cols-hero {
-    grid-template-columns: 3fr 3rem 2fr;
+  .md\:w-12 {
+    width: 3rem;
   }
 
   .md\:grid-cols-3 {
@@ -2617,8 +2661,17 @@ figcaption {
     z-index: 0;
   }
 
+  .lg\:my-12 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
   .lg\:ml-auto {
     margin-left: auto;
+  }
+
+  .lg\:ml-\[12\.5\%\] {
+    margin-left: 12.5%;
   }
 
   .lg\:hidden {
@@ -2631,6 +2684,12 @@ figcaption {
 
   .lg\:w-auto {
     width: auto;
+  }
+
+  .lg\:w-fit {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 
   .lg\:w-1\/2 {
@@ -2688,6 +2747,10 @@ figcaption {
 
   .lg\:text-base {
     font-size: var(--wp--preset--font-size--normal);
+  }
+
+  .lg\:text-gigantic {
+    font-size: var(--wp--preset--font-size--gigantic);
   }
 
   .lg\:leading-none {
