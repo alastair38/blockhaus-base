@@ -9,12 +9,12 @@
 
 ?>
 
-<section class="no-results not-found">
+<section class="no-results not-found space-y-6">
 	<header class="page-header">
 		<h2 class="page-title"><?php esc_html_e( 'Nothing Found', 'blockhaus' ); ?></h2>
 	</header><!-- .page-header -->
 
-	<div class="page-content">
+	<div class="page-content space-y-6">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
@@ -41,8 +41,7 @@
 			?>
 
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'blockhaus' ); ?></p>
-			<?php
-			get_search_form();
+			<?php echo blockhaus_custom_form();
 
 		endif;
 		?>
