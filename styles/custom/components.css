@@ -251,6 +251,11 @@ iframe {
   transition: 250ms;
 }
 
+.menu-toggle[aria-expanded='true'] > svg {
+  transform: rotate(-90deg);
+  transition: 250ms;
+}
+
 /* SOCIAL LNKS BLOCKS */
 
 .wp-block-social-links.is-style-logos-only .wp-social-link {

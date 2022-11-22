@@ -7,6 +7,8 @@
  * @package blockhaus
  */
 
+$social_sharing = get_field('sharing_enabled');
+
 ?>
 
 <div class="space-y-6 p-6 w-11/12 md:w-3/4 bg-primary-default rounded-md mx-auto overflow-hidden">
@@ -33,7 +35,7 @@
     
     <?php endif;?>
     
-    <?php $social_sharing = get_field('sharing_enabled');
+    <?php
 
       if($social_sharing):
       get_template_part( 'components/share-buttons' );

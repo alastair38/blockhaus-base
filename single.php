@@ -17,7 +17,7 @@ get_header();
 			the_post();
 
 			// get_template_part( 'layouts/content', 'page' );
-			get_template_part( 'layouts/post');
+			get_template_part( 'layouts/full-width');
 
 			the_post_navigation(
 				array(

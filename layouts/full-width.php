@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page-full.php
+ * Template part for displaying content in page-full.php and single.php
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
