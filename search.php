@@ -14,11 +14,13 @@ get_header();
 
 	<?php get_template_part('components/full-width-header'); ?>
 
+		<div class="p-6 md:p-12 w-11/12 md:w-3/4 bg-primary-default rounded-md mx-auto space-y-6">
+			
 		<?php if ( have_posts() ) : 
 		
 		?>
 
-	<div class="p-6 md:p-12 w-11/12 md:w-3/4 bg-primary-default rounded-md mx-auto space-y-6">
+	
 
 			<?php
 			/* Start the Loop */
