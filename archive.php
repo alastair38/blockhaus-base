@@ -41,7 +41,7 @@ $description = get_field($post_type . '_page_description', "options");
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'layouts/content')
+				get_template_part( 'layouts/content');
 
 			endwhile;
 
