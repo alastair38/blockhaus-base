@@ -37,11 +37,11 @@ $description = get_field($post_type . '_page_description', "options");
 			<?php endif;?>
 
 			<?php if ( have_posts() ) :
-			/* Start the Loop */get_template_part( 'layouts/content');
+			/* Start the Loop */;
 			while ( have_posts() ) :
 				the_post();
 
-				
+				get_template_part( 'layouts/content')
 
 			endwhile;
 
