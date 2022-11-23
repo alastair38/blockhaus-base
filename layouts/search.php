@@ -21,13 +21,7 @@
 
 		<div class="entry-meta flex gap-2">
 		
-			<?php
-			blockhaus_posted_on();
-
-			if ( 'page' !== get_post_type() ) :
-			blockhaus_posted_by();
-			endif; ?>
-
+			<?php blockhaus_posted_on(); ?>
 
 		</div><!-- .entry-meta -->
 		
