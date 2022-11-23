@@ -39,7 +39,7 @@ endif;
 
 ?>
 
-<header class="entry-header grid grid-cols-1 relative grid-rows-[minmax(12rem,_20rem)] has-<?php echo $background;?>-background-color has-background bg-curves bg-fixed bg-cover overflow-hidden">
+<header class="entry-header grid grid-cols-1 relative grid-rows-[12rem] lg:grid-rows-[20rem] has-<?php echo $background;?>-background-color has-background bg-curves bg-fixed bg-cover bg-center overflow-hidden">
 
 <h1 class="page-title z-0 mb-6 w-11/12 lg:w-fit mx-auto lg:ml-[12.5%] col-start-1 row-start-1 place-self-end justify-self-start bg-primary-default text-lg lg:text-gigantic px-6 font-black uppercase"><?php echo $title;?></h1>
 

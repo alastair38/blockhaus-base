@@ -1915,8 +1915,8 @@ input[type='text'], input[type='email'], textarea {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.grid-rows-\[minmax\(12rem\2c _20rem\)\] {
-  grid-template-rows: minmax(12rem, 20rem);
+.grid-rows-\[12rem\] {
+  grid-template-rows: 12rem;
 }
 
 .flex-col {
@@ -2112,6 +2112,10 @@ input[type='text'], input[type='email'], textarea {
 
 .bg-fixed {
   background-attachment: fixed;
+}
+
+.bg-center {
+  background-position: center;
 }
 
 .fill-current {
@@ -2700,6 +2704,10 @@ figcaption {
   .lg\:translate-y-0 {
     --tw-translate-y: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .lg\:grid-rows-\[20rem\] {
+    grid-template-rows: 20rem;
   }
 
   .lg\:flex-row {
