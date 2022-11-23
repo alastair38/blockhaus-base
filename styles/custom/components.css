@@ -30,7 +30,7 @@
     grid-template-rows: 85vh;
   }
   .grid-hero .hero-content {
-    @apply mx-auto;
+    @apply ml-auto mr-20;
   }
 }
 
