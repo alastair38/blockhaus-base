@@ -13,7 +13,7 @@
 
 .grid-hero figure,
 .grid-hero figure img {
-  @apply h-96 md:h-[90vh] object-cover;
+  @apply h-96 md:h-[90vh] object-cover w-full;
 }
 
 .grid-hero {

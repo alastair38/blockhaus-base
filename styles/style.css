@@ -777,6 +777,7 @@ main {
 
 .grid-hero figure, .grid-hero figure img {
   height: 24rem;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
