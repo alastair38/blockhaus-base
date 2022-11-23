@@ -1967,10 +1967,6 @@ input[type='text'], input[type='email'], textarea {
   gap: 1rem;
 }
 
-.gap-12 {
-  gap: 3rem;
-}
-
 .gap-1 {
   gap: 0.25rem;
 }
@@ -2687,6 +2683,10 @@ figcaption {
     height: auto;
   }
 
+  .lg\:w-3\/4 {
+    width: 75%;
+  }
+
   .lg\:w-auto {
     width: auto;
   }
@@ -2712,6 +2712,10 @@ figcaption {
 
   .lg\:flex-row {
     flex-direction: row;
+  }
+
+  .lg\:gap-12 {
+    gap: 3rem;
   }
 
   .lg\:gap-6 {

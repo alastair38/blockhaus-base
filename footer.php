@@ -32,7 +32,7 @@
 // Check rows exists.
 if( have_rows('details', 'option') ):?>
 
-	<ul class="flex gap-12 justify-center p-6 w-3/4 mx-auto">
+	<ul class="flex gap-4 lg:gap-12 justify-center p-6 lg:w-3/4 mx-auto">
 <?php	// Loop through rows.
 	while( have_rows('details', 'option') ) : the_row();
 
@@ -45,7 +45,7 @@ if( have_rows('details', 'option') ):?>
 			// echo '</code>';
 			?>
 			<li class="flex-1 flex flex-col gap-4 items-center justify-center">
-				<a class="flex-1 bg-white rounded-md" href="<?php echo $url;?>">
+				<a class="flex-1 bg-primary-default" href="<?php echo $url;?>">
 				<img class="object-contain px-2 h-full" src="<?php echo $logo_img['sizes']['medium'];?>" alt="<?php echo $logo_img['alt'];?>"/>
 			</a>
 			</li>
