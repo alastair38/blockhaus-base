@@ -28,7 +28,7 @@ elseif (is_search()):
 else:
 	$background_image = get_field('background_image_layout');
 	$transparent_image = get_field('transparent_image_layout');
-	$background =  get_field('choose_background', 'options');
+	$background =  get_field('choose_background');
 	$title = get_the_title();
 endif;
 
