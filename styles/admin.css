@@ -203,7 +203,7 @@ li#wp-admin-bar-my-account .ab-item .display-name,
   padding: 3rem 1.5rem;
   border-radius: 3px;
   display: flex;
-  border: 2px solid transparent;
+  border: 2px solid currentColor;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
@@ -217,6 +217,7 @@ li#wp-admin-bar-my-account .ab-item .display-name,
 
 .dashboard-card.settings {
   background: var(--wp--preset--color--secondary);
+  grid-column: 1 / -1;
 }
 
 .dashboard-card p {

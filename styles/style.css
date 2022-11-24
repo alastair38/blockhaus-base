@@ -721,6 +721,14 @@ main {
   color: var(--wp--preset--color--accent);
 }
 
+#primary-menu li a:hover {
+  color: var(--wp--preset--color--neutral-dark-900);
+}
+
+#primary-menu li a:focus {
+  color: var(--wp--preset--color--secondary);
+}
+
 .container {
   width: 100%;
 }
@@ -2082,10 +2090,6 @@ input[type='text'], input[type='email'], textarea {
   background-color: var(--wp--preset--color--primary-default);
 }
 
-.bg-highlight {
-  background-color: var(--wp--preset--color--highlight);
-}
-
 .bg-neutral-light-500 {
   background-color: var(--wp--preset--color--neutral-light-500);
 }
@@ -2096,6 +2100,10 @@ input[type='text'], input[type='email'], textarea {
 
 .bg-neutral-dark-900 {
   background-color: var(--wp--preset--color--neutral-dark-900);
+}
+
+.bg-highlight {
+  background-color: var(--wp--preset--color--highlight);
 }
 
 .bg-curves {
@@ -2260,6 +2268,10 @@ input[type='text'], input[type='email'], textarea {
 
 .leading-10 {
   line-height: 2.5rem;
+}
+
+.leading-snug {
+  line-height: 1.375;
 }
 
 .leading-6 {
@@ -2675,6 +2687,10 @@ figcaption {
     margin-left: 12.5%;
   }
 
+  .lg\:mb-12 {
+    margin-bottom: 3rem;
+  }
+
   .lg\:hidden {
     display: none;
   }
@@ -2774,5 +2790,9 @@ figcaption {
 
   .lg\:leading-none {
     line-height: 1;
+  }
+
+  .lg\:leading-normal {
+    line-height: 1.5;
   }
 }

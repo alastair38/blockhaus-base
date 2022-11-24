@@ -45,5 +45,5 @@ main {
 }
 
 #primary-menu li a {
-  @apply text-accent-default;
+  @apply text-accent-default hover:text-neutral-dark-900 focus:text-neutral-dark-900;
 }
