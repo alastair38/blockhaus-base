@@ -38,6 +38,14 @@ bg-accent-tertiary*/
   margin-bottom: 0.5rem;
 }
 
+.acf-field-group > .acf-label label {
+  background-color: var(--wp--preset--color--neutral-dark-100);
+  color: white;
+  font-weight: 900;
+  width: fit-content;
+  padding: 0.25rem 0.75rem;
+}
+
 .color-switcher .selected input[type='radio'][value='offset']:after {
   background-color: var(--wp--preset--color--offset);
 }
@@ -107,6 +115,14 @@ bg-accent-tertiary*/
   overflow: hidden;
 }
 
+.acf-switch + .message {
+  display: block;
+  margin-left: 0;
+  margin-top: 6px;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
 .meta-box-sortables .postbox .toggle-indicator::before {
   content: '\f343';
   font-size: 18px;
@@ -149,7 +165,7 @@ a.components-button.edit-post-fullscreen-mode-close svg {
   font-size: 48px;
   padding-bottom: 0.25rem;
   padding-right: 0.25rem;
-  color: var(--wp--preset--color--primary-default);
+  color: var(--wp--preset--color--primary);
 }
 
 #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu .wp-menu-name,

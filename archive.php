@@ -9,30 +9,26 @@
 
 get_header();
 
-if(is_post_type_archive( 'project' )):
-	$cols = 'md:grid-cols-3';
-endif;
-
 $post_type_obj = get_post_type_object( $post_type );
 
-$description = get_field($post_type . '_page_description', "options");
+$postTypeMeta = get_field($post_type . '_page_settings', "options");
 ?>
 
 		<main class="main-content">
 
-			<?php get_template_part('components/full-width-header'); ?>
+			<?php get_template_part('components/full-width-header-alt'); ?>
 
-			<div class="py-6 px-2 lg:p-6 bg-primary-default grid my-6 lg:my-12 rounded-md w-11/12 md:w-3/4 mx-auto grid-cols-1 <?php echo $cols;?> gap-6">
+			<div class="grid my-6 lg:my-16 rounded-md w-11/12 md:w-3/4 mx-auto grid-cols-1 md:grid-cols-3 gap-6">
 
-			<div class="col-span-full">
+			<!-- <div class="col-span-full">
 				<?php echo blockhaus_custom_form($post_type_obj->labels->name, $post_type); ?>
-			</div>
+			</div> -->
 				
 			<?php
 
-			if($description):?>
+			if($postTypeMeta['page_description']):?>
 
-			<p class="col-span-full"><?php echo $description;?></p>
+			<div class="col-span-full"><?php echo $postTypeMeta['page_description'];?></div>
 
 			<?php endif;?>
 

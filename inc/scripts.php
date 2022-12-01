@@ -12,14 +12,37 @@ function blockhaus_scripts() {
 
 	wp_enqueue_script( 'blockhaus-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), wp_get_theme()->get( 'Version' ), true );
 
-	$cookies_set = get_field('cookies_set', 'option');
+	if(function_exists('get_field')):
 
-  if($cookies_set) {
-      wp_enqueue_script( 'cookie-js', 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js', array(), '', true );
-      wp_enqueue_script( 'cookie-init-js', get_template_directory_uri() . '/assets/js/cookieinit.js', array( 'jquery' ), '', true );
+	$cookies = get_field('cookies_settings', 'option');
+	$cookiesSet = $cookies['cookies_set'];
 
-      // wp_enqueue_style( 'cookie-style', 'https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css', array(), '', 'all' );
-    }
+	$consentPanel = get_field('consent_panel_settings', 'options');
+	$privacyPage = $consentPanel['privacy_page'];
+	$contactPage = $consentPanel['contact_page'];
+
+	$analytics = get_field('analytics_settings', 'option');
+	$analyticsSet = $analytics['analytics_cookies_set'];
+
+	endif;
+
+  if($cookiesSet) {
+      wp_enqueue_script( 'cookie-js', 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.9/dist/cookieconsent.js', array(), '', true );
+      wp_enqueue_script( 'cookie-init-js', get_template_directory_uri() . '/assets/js/cookieinit.js', array( 'cookie-js' ), '', true );
+
+      wp_enqueue_style( 'cookie-style', 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.9/dist/cookieconsent.css', array(), '', 'all' ); 
+			
+			wp_localize_script("cookie-js", "WPVars", array(
+        "contact_page" => $contactPage,
+        "privacy_page" => $privacyPage,
+				"analytics" => $analyticsSet,
+        "time" => time(),
+        "images_folder" => get_template_directory_uri() . "/images",
+      )
+    );
+
+
+  }
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

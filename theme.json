@@ -5,18 +5,18 @@
       "defaultPalette": false,
       "palette": [
         {
-          "slug": "primary-default",
+          "slug": "primary",
           "color": "rgba(255 255 255 / 1)",
           "name": "Primary"
         },
         {
           "slug": "offset",
-          "color": "rgba(253 224 71 / 1)",
+          "color": "rgba(249 168 38 / 1)",
           "name": "Offset"
         },
         {
           "slug": "secondary",
-          "color": "rgba(41 44 44 / 1)",
+          "color": "rgba(51 54 82 / 1)",
           "name": "Secondary"
         },
         {
@@ -31,7 +31,7 @@
         },
         {
           "slug": "accent-tertiary",
-          "color": "rgba(125 234 192 / 1)",
+          "color": "rgba(144 228 221 / 1)",
           "name": "Tertiary Accent"
         },
         {
@@ -51,32 +51,32 @@
         },
         {
           "slug": "neutral-light-900",
-          "color": "rgba(200 200 200 / 1)",
+          "color": "rgba(177 177 177 / 1)",
           "name": "Neutral Light (900)"
         },
         {
           "slug": "neutral-light-500",
-          "color": "rgba(212 212 212 / 1)",
+          "color": "rgba(208 210 215 / 1)",
           "name": "Neutral Lighter (500)"
         },
         {
           "slug": "neutral-light-100",
-          "color": "rgba(244 244 244 / 1)",
+          "color": "rgba(233 234 236 / 1)",
           "name": "Neutral Lightest (100)"
         },
         {
           "slug": "neutral-dark-100",
-          "color": "rgba(35 41 41 / 1)",
+          "color": "rgba(116 116 116 / 1)",
           "name": "Neutral Dark (100)"
         },
         {
           "slug": "neutral-dark-500",
-          "color": "rgba(3 3 3 / 1)",
+          "color": "rgba(68 68 68 / 1)",
           "name": "Neutral Darker (500)"
         },
         {
           "slug": "neutral-dark-900",
-          "color": "rgba(0 0 0 / 1)",
+          "color": "rgba(3 3 3 / 1)",
           "name": "Neutral Darkest (900)"
         }
       ],
@@ -89,6 +89,7 @@
       }
     },
     "typography": {
+      "fluid": true,
       "customFontSize": false,
       "lineHeight": true,
       "dropCap": false,
@@ -151,39 +152,76 @@
       ],
       "fontSizes": [
         {
+          "size": "0.5rem",
+          "fluid": {
+            "min": "0.5rem",
+            "max": "0.72rem"
+          },
           "slug": "tiny",
-          "size": "clamp(0.56rem, calc(0.50rem + 0.31vw), 0.72rem)",
           "name": "Tiny"
         },
         {
+          "size": "0.7rem",
+          "fluid": {
+            "min": "0.7rem",
+            "max": "0.9rem"
+          },
           "slug": "small",
-          "size": "clamp(0.70rem, calc(0.62rem + 0.39vw), 0.90rem)",
           "name": "Small"
         },
         {
+          "size": "0.88rem",
+          "fluid": {
+            "min": "0.88rem",
+            "max": "1.13rem"
+          },
           "slug": "normal",
-          "size": "clamp(0.88rem, calc(0.78rem + 0.49vw), 1.13rem)",
           "name": "Normal"
         },
         {
+          "size": "1.09rem",
+          "fluid": {
+            "min": "1.09rem",
+            "max": "1.41rem"
+          },
           "slug": "large",
-          "size": "clamp(1.09rem, calc(0.97rem + 0.61vw), 1.41rem)",
           "name": "Large"
         },
         {
+          "size": "1.37rem",
+          "fluid": {
+            "min": "1.37rem",
+            "max": "1.76rem"
+          },
           "slug": "extra-large",
-          "size": "clamp(1.37rem, calc(1.22rem + 0.76vw), 1.76rem)",
           "name": "Extra Large"
         },
         {
+          "size": "1.71rem",
+          "fluid": {
+            "min": "1.71rem",
+            "max": "2.20rem"
+          },
           "slug": "huge",
-          "size": "clamp(1.71rem, calc(1.52rem + 0.95vw), 2.20rem)",
           "name": "Huge"
         },
         {
+          "size": "2.14rem",
+          "fluid": {
+            "min": "2.14rem",
+            "max": "2.75rem"
+          },
           "slug": "gigantic",
-          "size": "clamp(2.14rem, calc(1.90rem + 1.19vw), 2.75rem)",
           "name": "Gigantic"
+        },
+        {
+          "size": "3.14rem",
+          "fluid": {
+            "min": "3.14rem",
+            "max": "4.75rem"
+          },
+          "slug": "display",
+          "name": "Display"
         }
       ]
     },
@@ -195,7 +233,7 @@
   },
   "styles": {
     "color": {
-      "background": "var(--wp--preset--color--primary-default)",
+      "background": "var(--wp--preset--color--primary)",
       "text": "var(--wp--preset--color--secondary)"
     },
     "spacing": {

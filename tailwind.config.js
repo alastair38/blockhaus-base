@@ -8,6 +8,7 @@ module.exports = {
     './functions.php',
     '../../plugins/blockhaus-functionality/includes/blocks/**/*.php',
   ],
+  safelist: ['rounded-blob', 'object-right', 'object-left', 'object-center'],
   theme: {
     fontFamily: {
       sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
@@ -22,12 +23,11 @@ module.exports = {
       xl: 'var(--wp--preset--font-size--extra-large)',
       huge: 'var(--wp--preset--font-size--huge)',
       gigantic: 'var(--wp--preset--font-size--gigantic)',
+      display: 'var(--wp--preset--font-size--display)',
     },
     extend: {
       colors: {
-        primary: {
-          default: 'var(--wp--preset--color--primary-default)',
-        },
+        primary: 'var(--wp--preset--color--primary)',
         secondary: 'var(--wp--preset--color--secondary)',
         offset: 'var(--wp--preset--color--offset)',
         accent: {
@@ -57,9 +57,12 @@ module.exports = {
         curves:
           "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='visual' viewBox='0 0 900 600' width='900' height='600'%3E%3Cpath d='M584 600L596 550C608 500 632 400 588.5 300C545 200 434 100 378.5 50L323 0L900 0L900 50C900 100 900 200 900 300C900 400 900 500 900 550L900 600Z' fill='%23bfbfbf40'%3E%3C/path%3E%3Cpath d='M251 600L303.5 550C356 500 461 400 455 300C449 200 332 100 273.5 50L215 0L324 0L379.5 50C435 100 546 200 589.5 300C633 400 609 500 597 550L585 600Z' fill='%23ffffff50'%3E%3C/path%3E%3Cpath d='M0 600L0 550C0 500 0 400 0 300C0 200 0 100 0 50L0 0L216 0L274.5 50C333 100 450 200 456 300C462 400 357 500 304.5 550L252 600Z' fill='%23cccbcb3b'%3E%3C/path%3E%3C/svg%3E\")",
         waves:
-          "url('http://michellepentecost.local/wp-content/themes/blockhaus/assets/images/backgrounds/waves.svg')",
+          "url('/wp-content/themes/blockhaus/assets/images/backgrounds/waves.svg')",
         'waves-alt':
-          "url('http://michellepentecost.local/wp-content/themes/blockhaus/assets/images/backgrounds/waves-45.svg')",
+          "url('/wp-content/themes/blockhaus/assets/images/backgrounds/waves-45.svg')",
+      },
+      borderRadius: {
+        blob: '61% 39% 36% 64% / 47% 50% 50% 53%',
       },
       boxShadow: {
         retro: '2px 2px 0 0 currentColor',

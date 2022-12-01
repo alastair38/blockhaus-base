@@ -12,7 +12,7 @@ function blockhaus_meta_description() {
   if ( is_singular() && !is_front_page() ) {
       $post_description = strip_tags($post->post_content);
       // $post_description = strip_shortcodes( $post->post_content );
-      $post_description = str_replace( array("\n", "\r", "\t"), ' ', $post_description );
+      $post_description = str_replace( array("\n", "\'", "\"", "\r", "\t"), ' ', $post_description );
       $post_description = mb_substr( $post_description, 0, 310, 'utf8' );
       $post_description = normalize_whitespace($post_description);
       echo '<meta name="description" content="' . $post_description . '" />' . "\n";
@@ -78,21 +78,56 @@ add_action( 'wp_head', 'blockhaus_meta_description');
 function blockhaus_opengraph() {
   global $post;
     if(is_singular()) {
-    if(has_post_thumbnail($post->ID)) {
-    $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'large');
-    $img = $img_src[0];
+
+      $title = get_the_title();
+
+      if(has_post_thumbnail($post->ID)) {
+      $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'social-media');
+      $img = $img_src[0];
+      } else {
+      $default = get_field('social_image', 'options');
+      $img = $default['sizes']['social-media'];
+      }
+
+      if(has_excerpt()) {
+      $excerpt = strip_tags($post->post_excerpt);
+      $excerpt = str_replace("", "'", $excerpt);
+      } else {
+      $excerpt = get_bloginfo('description');
+      }
+
+    } elseif(is_archive() && ! is_search()) {
+
+      $title = get_the_archive_title();
+      $default = get_field('social_image', 'options');
+      $img = $default['sizes']['social-media'];
+      $excerpt = get_bloginfo('description');
+
+    } elseif ( is_home() && ! is_front_page() ) {
+
+      $title = single_post_title('',false);
+      $default = get_field('social_image', 'options');
+      $img = $default['sizes']['social-media'];
+      $excerpt = get_bloginfo('description');
+
+    } elseif(is_search()) {
+
+      $title = get_bloginfo('title') . ' search results for keyword ' . get_search_query();
+      $default = get_field('social_image', 'options');
+      $img = $default['sizes']['social-media'];
+      $excerpt = get_bloginfo('description');
+
     } else {
-    $default_img = get_field(get_post_type() . '_header', 'options');
-    $img = $default_img['url'];
+
+      $title = get_bloginfo('title');
+      $default = get_field('social_image', 'options');
+      $img = $default['sizes']['social-media'];
+      $excerpt = get_bloginfo('description');
+
     }
-    if(has_excerpt()) {
-    $excerpt = strip_tags($post->post_excerpt);
-    $excerpt = str_replace("", "'", $excerpt);
-    } else {
-    $excerpt = get_bloginfo('description');
-    }
+
     ?>
-    <meta property="og:title" content="<?php echo the_title(); ?>"/>
+    <meta property="og:title" content="<?php echo $title; ?>"/>
     <meta property="og:description" content="<?php echo $excerpt; ?>"/>
     <meta property="og:type" content="article"/>
     <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
@@ -100,13 +135,10 @@ function blockhaus_opengraph() {
     <meta property="og:image" content="<?php echo $img; ?>"/>
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="<?php echo the_permalink(); ?>" />
-    <meta name="twitter:title" content="<?php echo the_title(); ?>" />
+    <meta name="twitter:title" content="<?php echo $title; ?>" />
     <meta name="twitter:description" content="<?php echo $excerpt; ?>" />
-    <meta name="twitter:image" content="<?php echo $img_src[0]; ?>" />
+    <meta name="twitter:image" content="<?php echo $img; ?>" />
     <?php
-    } else {
-    return;
-    }
   }
 
   add_action('wp_head', 'blockhaus_opengraph', 10);

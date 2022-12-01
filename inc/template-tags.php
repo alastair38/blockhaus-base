@@ -270,3 +270,59 @@ function blockhaus_logout_link() {
 	endif;
 
 }
+
+function blockhaus_header_layout() {
+
+	$header = new stdClass;
+	$post_type = get_post_type();
+
+	if(is_archive() && ! is_search()):
+
+		if(function_exists('get_field')):
+		$headerSettings = get_field(get_post_type() . '_page_settings', 'options');
+		$header->image = $headerSettings['header_image'];
+		$header->contain =  $headerSettings['contain_image'];
+		$header->position =  $headerSettings['position_image'];
+		$header->mono =  $headerSettings['mono_image'];
+		endif;
+
+		$header->title = get_the_archive_title();
+
+	elseif ( is_home() && ! is_front_page() ):
+
+		if(function_exists('get_field')):
+			$headerSettings = get_field(get_post_type() . '_page_settings', 'options');
+			$header->image = $headerSettings['header_image'];
+			$header->contain =  $headerSettings['contain_image'];
+			$header->position =  $headerSettings['position_image'];
+			$header->mono =  $headerSettings['mono_image'];
+		endif;
+
+		$header->title = single_post_title('',false);
+
+	elseif (is_search()):
+
+		if(function_exists('get_field')):
+		// $header->image = get_field('search_header', 'options');
+		// $header->background =  get_field('search_choose_background', 'options');
+		endif;
+
+		$header->title = 	'<span class="underline decoration-accent-secondary decoration-4">Search results for: ' . get_search_query() . '</span>';
+
+	else:
+
+		if(function_exists('get_field')):
+		$header->showImage = get_field('background_image_layout');
+		$header->background =  get_field('choose_background');
+		$header->contain =  get_field('contain_image');
+		$header->mono =  get_field('mono_image');
+		$header->position =  get_field('position_image');
+		endif;
+
+		$header->title = get_the_title();
+
+	endif;
+
+
+	return $header;
+}

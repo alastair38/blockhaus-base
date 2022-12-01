@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying social media sharing buttons
+ * Component for displaying social media sharing buttons
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -9,7 +9,7 @@
 
 ?>
 
-<div class="blockhaus-social-share p-6 flex items-center justify-center gap-4 bg-gray-100 rounded-md">
+<div class="blockhaus-social-share p-6 flex items-center justify-center gap-4">
 
 <p class="sr-only">Share this</p>
 

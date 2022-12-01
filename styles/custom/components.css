@@ -13,7 +13,7 @@
 
 .grid-hero figure,
 .grid-hero figure img {
-  @apply h-96 md:h-[90vh] object-cover w-full;
+  @apply h-96 md:h-full object-cover w-full;
 }
 
 .grid-hero {
@@ -116,7 +116,7 @@
 }
 
 [class*='blockhaus-quote'] cite {
-  @apply bg-primary-default px-2 rounded-full max-w-fit;
+  @apply bg-primary px-2 rounded-full max-w-fit;
 }
 
 .blockhaus-search input[type='search'] {
@@ -236,11 +236,11 @@ iframe {
   @apply text-secondary bg-white transition-colors duration-200;
 }
 
-.wp-block-button.bg-primary-default:hover {
+.wp-block-button.bg-primary:hover {
   @apply bg-transparent;
 }
 
-.wp-block-button.bg-primary-default:hover > .wp-block-button__link {
+.wp-block-button.bg-primary:hover > .wp-block-button__link {
   @apply bg-transparent;
 }
 

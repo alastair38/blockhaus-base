@@ -68,6 +68,8 @@ if ( ! function_exists( 'blockhaus_setup' ) ) {
   
       remove_theme_support( 'core-block-patterns' );
 
+      remove_filter ('the_excerpt', 'wpautop');
+
        // Allow SVG
 add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
 
@@ -147,7 +149,8 @@ add_action( 'admin_head', 'blockhaus_fix_svg' );
   function blockhaus_custom_images() {
     add_image_size( 'landscape', 800, 450, array( 'center', 'center' ) ); // adds 800 pixels wide by 450 pixels tall image option, hard crop mode
     add_image_size( 'profile', 300, 300, array( 'center', 'center' ) ); // adds 300 pixels wide by 300 pixels tall image option, hard crop mode
-    add_image_size( 'blog', 500, 300, array( 'center', 'center' ) ); // adds 300 pixels wide by 300 pixels tall image option, hard crop mode
+    add_image_size( 'blog', 500, 300, array( 'center', 'center' ) ); // adds 500 pixels wide by 300 pixels tall image option, hard crop mode
+    add_image_size( 'social-media', 800, 418, array( 'center', 'center' ) ); // adds 800 pixels wide by 418 pixels tall image option, hard crop mode
   }
   
   add_action( 'after_setup_theme', 'blockhaus_custom_images' );
@@ -157,7 +160,18 @@ add_action( 'admin_head', 'blockhaus_fix_svg' );
           'landscape' => __( 'Landscape' ),
           'profile' => __( 'Profile' ),
           'blog' => __( 'Blog layout' ),
+          'social-media' => __( 'Social media' ),
       ) );
   }
   
   add_filter( 'image_size_names_choose', 'blockhaus_image_names' );
+
+  function blockhaus_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'blockhaus_custom_excerpt_length', 999 );
+
+// function acf_wysiwyg_remove_wpautop() {
+//   remove_filter('acf_the_content', 'wpautop' );
+// }
+// add_action('acf/init', 'acf_wysiwyg_remove_wpautop', 15);

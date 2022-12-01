@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="p-6 bg-primary-default border border-neutral-light-500 flex flex-col gap-2 rounded-md shadow-md break-words">
+<article id="post-<?php the_ID(); ?>" class="p-6 bg-primary border border-neutral-light-500 flex flex-col gap-4 rounded-md shadow-md break-words">
 <?php 
 if(('project' === get_post_type()) || ('post' === get_post_type())):
 blockhaus_post_thumbnail('landscape'); 
@@ -31,7 +31,7 @@ endif;
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content mt-auto">
+	<div class="entry-content">
 		<?php
 
 		if(('publication' === get_post_type()) || ('link' === get_post_type())):
@@ -55,7 +55,7 @@ endif;
 		<?php endif;?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer mt-auto">
 
 		<?php get_template_part('components/permalink'); ?>
 		

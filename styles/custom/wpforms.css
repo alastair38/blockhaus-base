@@ -11,5 +11,5 @@ textarea {
 }
 
 .wpforms-form button[type='submit'] {
-  @apply px-3 py-1 border hover:bg-primary-default focus:bg-primary-default border-current rounded-full bg-neutral-light-100;
+  @apply px-3 py-1 border hover:bg-primary focus:bg-primary border-current rounded-full bg-neutral-light-100;
 }

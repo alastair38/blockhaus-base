@@ -13,8 +13,11 @@
  */
 function blockhaus_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
+
+	$consentPanel = get_field('consent_panel_settings', 'options');
+	$theme = $consentPanel['theme'];
 	
-	$classes[] = 'flex flex-col h-full w-full bg-neutral-light-100 bg-cover bg-fixed';
+	$classes[] = 'flex flex-col h-full w-full bg-gradient-to-b from-neutral-light-100 to-accent-tertiary bg-fixed ' . $theme;
 
 	return $classes;
 }

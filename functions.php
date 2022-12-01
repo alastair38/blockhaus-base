@@ -58,11 +58,6 @@ require get_template_directory() . '/inc/search.php';
 require get_template_directory() . '/inc/navigation.php';
 
 /**
- * Block patterns
- */
-// require get_template_directory() . '/inc/block-patterns.php';
-
-/**
  * SEO
  */
 require get_template_directory() . '/inc/seo.php';
