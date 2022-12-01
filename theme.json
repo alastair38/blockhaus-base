@@ -11,7 +11,7 @@
         },
         {
           "slug": "offset",
-          "color": "rgba(249 168 38 / 1)",
+          "color": "rgba(0 20 137 / 1)",
           "name": "Offset"
         },
         {
@@ -21,23 +21,13 @@
         },
         {
           "slug": "accent",
-          "color": "rgba(0 20 137 / 1)",
+          "color": "rgba(249 168 38 / 1)",
           "name": "Accent"
-        },
-        {
-          "slug": "accent-secondary",
-          "color": "rgba(238 101 179 / 1)",
-          "name": "Secondary Accent"
         },
         {
           "slug": "accent-tertiary",
           "color": "rgba(144 228 221 / 1)",
           "name": "Tertiary Accent"
-        },
-        {
-          "slug": "accent-quarter",
-          "color": "rgba(210 175 255 / 1)",
-          "name": "Quarter Accent"
         },
         {
           "slug": "highlight",
@@ -80,8 +70,16 @@
           "name": "Neutral Darkest (900)"
         }
       ],
+      "gradients": [
+        {
+          "slug": "gray-to-cyan",
+          "gradient": "linear-gradient(180deg, var(--wp--preset--color--neutral-light-100), var(--wp--preset--color--accent-tertiary))",
+          "name": "Gray to cyan"
+        }
+      ],
       "custom": false,
-      "customGradient": false
+      "customGradient": false,
+      "defaultGradients": false
     },
     "custom": {
       "spacing": {
@@ -246,12 +244,12 @@
     "elements": {
       "h1": {
         "color": {
-          "text": "var(--wp--preset--color--accent)"
+          "text": "var(--wp--preset--color--offset)"
         }
       },
       "h2": {
         "color": {
-          "text": "var(--wp--preset--color--accent)"
+          "text": "var(--wp--preset--color--offset)"
         }
       }
     },

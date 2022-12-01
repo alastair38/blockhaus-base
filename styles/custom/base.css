@@ -18,11 +18,11 @@ h1[contenteditable='true'] {
 }
 
 p a {
-  @apply underline decoration-offset decoration-2 hover:decoration-secondary focus:decoration-secondary;
+  @apply underline decoration-accent-default decoration-2 hover:decoration-secondary focus:decoration-secondary;
 }
 
 [aria-current='page'] {
-  @apply underline decoration-offset decoration-2;
+  @apply underline decoration-accent-default decoration-2;
 }
 
 main {
@@ -45,5 +45,5 @@ main {
 }
 
 #primary-menu li a {
-  @apply text-accent-default hover:text-neutral-dark-900 focus:text-neutral-dark-900;
+  @apply text-offset hover:text-neutral-dark-900 focus:text-neutral-dark-900;
 }
