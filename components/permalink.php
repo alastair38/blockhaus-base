@@ -15,10 +15,10 @@ endif;
 
 if($external_link): ?>
 
-<a class="py-1 px-4 border border-current inline-flex transition-colors duration-200 rounded-full hover:ring-4 hover:ring-accent-tertiary focus:ring-4 focus:ring-accent-tertiary" href="<?php echo esc_url( $external_link );?>" rel="external">View <?php echo get_post_type();?></a>
+<a aria-label="Read <?php the_title();?>" class="rounded-md text-sm inline-block w-fit bg-secondary text-white px-6 py-2 hover:ring-2 focus:ring-2 ring-offset-2 ring-transparent hover:ring-secondary focus:ring-secondary" href="<?php echo esc_url( $external_link );?>" rel="external">View <?php echo get_post_type();?></a>
 
 <?php else:?>
 
-<a class="py-1 px-4 border border-current inline-flex transition-colors duration-200 rounded-full hover:ring-4 hover:ring-accent-tertiary focus:ring-4 focus:ring-accent-tertiary" href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">View <?php echo get_post_type();?></a>
+<a aria-label="Read <?php the_title();?>" class="rounded-md text-sm inline-block w-fit bg-secondary text-white px-6 py-2 hover:ring-2 focus:ring-2 ring-offset-2 ring-transparent hover:ring-secondary focus:ring-secondary" href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">View <?php echo get_post_type();?></a>
 
 <?php endif;?>

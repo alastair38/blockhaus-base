@@ -20,13 +20,6 @@ blockquote.is-style-default p {
   @apply italic;
 }
 
-/* PROFILE BLOCK HOVER STYLES */
-
-[class*='blockhaus'] .wp-block-button__link,
-[class*='blockhaus'] .wp-block-read-more {
-  @apply hover:ring-4 hover:ring-highlight focus:ring-4 focus:ring-highlight;
-}
-
 /* PSEUDO STYLES FOR LINKS */
 
 .wp-block-button__link:active,

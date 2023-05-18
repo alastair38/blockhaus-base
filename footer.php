@@ -11,63 +11,71 @@
 
 ?>
 
-<footer class="py-6">
-
-
-<div class="place-items-center">
-
-
-<div class="rounded-md space-y-4 flex flex-col items-center">
-	<p class="font-black">Follow us</p>
-  <?php echo blockhaus_display_social_profiles();?>
-</div>
-
+<footer class="mt-12 md:mt-24 text-sm">
 
 <?php
 
 // Check rows exists.
 if( have_rows('funder', 'option') ):?>
 
-	<ul class="flex gap-4 lg:gap-12 justify-center p-6 lg:w-3/4 mx-auto">
-<?php	// Loop through rows.
-	while( have_rows('funder', 'option') ) : the_row();
+	<ul aria-label="Project funders and partners" class="flex gap-4 lg:gap-12 justify-center px-6 py-12 lg:w-3/4 mx-auto">
+		<?php	// Loop through rows.
+			while( have_rows('funder', 'option') ) : the_row();
 
-			// Load sub field value.
-			$logo_img = get_sub_field('logo');
-			$name = get_sub_field('name');
-			$url = get_sub_field('website');
-			// echo '<code class="text-white">';
-			// print_r($logo_img);
-			// echo '</code>';
-			?>
-			<li class="flex-1 flex flex-col gap-4 items-center justify-center">
-				<a class="flex-1" href="<?php echo $url;?>">
-				<img class="object-contain px-2 h-full" src="<?php echo $logo_img['sizes']['medium'];?>" alt="<?php echo $logo_img['alt'];?>"/>
-			</a>
-			</li>
+					// Load sub field value.
+					$logo_img = get_sub_field('logo');
+					$name = get_sub_field('name');
+					$url = get_sub_field('website');
 			
+					?>
+					<li class="flex-1 flex flex-col gap-4 items-center justify-center">
+						<a aria-label="<?php echo $name;?> website" class="flex-1" href="<?php echo $url;?>">
+						<img loading="lazy" class="p-2 h-full" height='100' width='auto' src="<?php echo $logo_img['sizes']['thumbnail'];?>" alt="<?php echo $logo_img['alt'];?>"/>
+					</a>
+					</li>
+					
 
 
-		<?php // Do something...
+				<?php // Do something...
 
-	// End loop.
-	endwhile; 
-else :
-	// Do something...
-endif;
+			// End loop.
+			endwhile; 
+		else :
+			// Do something...
+		endif;
 
-?>
+		?>
 	</ul>
+	
+<div class="p-2 md:p-6 bg-secondary text-primary">
+	
+	<div class="place-items-center grid grid-flow-row md:grid-flow-col auto-cols-fr gap-6 py-6 bg-secondary text-primary ">
+		
+		<?php echo blockhaus_display_address();?>
+		
 
-<p class="flex justify-center text-sm">
+  	<?php echo blockhaus_display_social_profiles();?>
+
 		<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html_e( bloginfo('name') . ' &copy; ' . date("Y") , 'Blockhaus' ), 'Blockhaus' );
-				?>
-</p>
+					wp_nav_menu(
+						array(
+							'theme_location' => 'footer-1',
+							'menu_id'        => 'footer-menu',
+							'menu_class'		 => 'flex gap-2 md:gap-0 md:flex-col',
+							'container'			 => 'nav',
+							'container_aria_label'	=> 'footer menu',
+						)
+					);
+		?>
 
-</div>
-
+		</div>
+			<p class="text-center text-tiny pt-6">
+					<?php
+							/* translators: 1: Theme name, 2: Theme author. */
+							printf( esc_html_e( bloginfo('name') . ' &copy; ' . date("Y") , 'Blockhaus' ), 'Blockhaus' );
+							?>
+			</p>
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

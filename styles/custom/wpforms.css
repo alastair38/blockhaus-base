@@ -4,11 +4,11 @@ form.wpforms-form {
   @apply bg-white p-6 rounded-md border border-accent-default;
 }
 
-input[type='text'],
+/* input[type='text'],
 input[type='email'],
 textarea {
   @apply border py-1 px-3 my-1 border-gray-300 bg-gray-50 rounded-sm;
-}
+} */
 
 .wpforms-form button[type='submit'] {
   @apply px-3 py-1 border hover:bg-primary focus:bg-primary border-current rounded-full bg-neutral-light-100;

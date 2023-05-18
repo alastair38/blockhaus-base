@@ -13,37 +13,58 @@ function blockhaus_meta_description() {
       $post_description = strip_tags($post->post_content);
       // $post_description = strip_shortcodes( $post->post_content );
       $post_description = str_replace( array("\n", "\'", "\"", "\r", "\t"), ' ', $post_description );
-      $post_description = mb_substr( $post_description, 0, 310, 'utf8' );
+      $post_description = mb_substr( $post_description, 0, 170, 'utf8' );
       $post_description = normalize_whitespace($post_description);
       echo '<meta name="description" content="' . $post_description . '" />' . "\n";
   }
   
   if ( is_home() && !is_front_page() ) {
-  		$blog_page_description = get_field("post_page_description", "options");
-      if($blog_page_description):
-  		$blog_page_description = strip_tags($blog_page_description);
-  		$blog_page_description = normalize_whitespace($blog_page_description);
-      echo '<meta name="description" content="' . $blog_page_description . '" />' . "\n";
+      $blog_page_settings = get_field("post_page_settings", "options");
+  		$description = $blog_page_settings['page_description'];
+      if($description):
+  		$description = strip_tags($description);
+  		$description = normalize_whitespace($description);
+      else:
+      $description = get_bloginfo( "description" );
       endif;
+      echo '<meta name="description" content="' . $description . '" />' . "\n";
+      echo '<link rel="canonical" href="' . site_url() . $_SERVER['REQUEST_URI'] .'">';
   }
   
   if ( is_front_page() ) {
       echo '<meta name="description" content="' . get_bloginfo( "description" ) . '" />' . "\n";
   }
+  
   if ( is_category() ) {
-      $category_description = strip_tags(category_description());
-      if($category_description):
-      $category_description = normalize_whitespace($category_description);
-      echo '<meta name="description" content="' . $category_description . '" />' . "\n";
+      $description = strip_tags(category_description());
+      
+      if($description):
+        
+      $description = normalize_whitespace($description);
+      
+      else:
+        
+      $description = get_bloginfo( "description" );
+      
       endif;
+      
+      echo '<meta name="description" content="' . $description . '" />' . "\n";   
   }
 
   if ( is_tax() ) {
-      $term_description = strip_tags(term_description());
-      if($term_description):
-      $term_description = normalize_whitespace($term_description);
-      echo '<meta name="description" content="' . $term_description . '" />' . "\n";
-      endif;
+    $description = strip_tags(term_description());
+      
+    if($description):
+      
+    $description = normalize_whitespace($description);
+    
+    else:
+      
+    $description = get_bloginfo( "description" );
+    
+    endif;
+    
+    echo '<meta name="description" content="' . $description . '" />' . "\n";   
   }
 
     // get registered public custom post types
@@ -63,12 +84,20 @@ function blockhaus_meta_description() {
     if ( $post_types ) { // If there are any custom public post types.
         foreach ( $post_types  as $post_type ) { // loop through
           if ( is_post_type_archive($post_type) ) { // check if on the archive page for that post type
-            $description = get_field($post_type . "_page_description", "options"); // get post type page description from options page
+            $page_settings = get_field($post_type . "_page_description", "options"); // get post type page description from options page
+            $description = $page_settings['page_description'];
             if($description): // if description exists, add it to the head
             $description = strip_tags($description);
             $description = normalize_whitespace($description);
-            echo '<meta name="description" content="' . $description . '" />' . "\n";
+            
+            else:
+      
+            $description = get_bloginfo( "description" );
+            
             endif;
+            
+            echo '<meta name="description" content="' . $description . '" />' . "\n";
+            
         }
       }
     }
@@ -76,17 +105,30 @@ function blockhaus_meta_description() {
 add_action( 'wp_head', 'blockhaus_meta_description');
 
 function blockhaus_opengraph() {
+  
+  $img = get_field('branding', 'options');
+  
+  if($img):
+    
+    $img = $img['social_image'] ;
+    $img = $img['sizes']['social-media'];
+  
+  else: 
+    
+  $img = get_template_directory_uri() . '/assets/images/social/og.jpg';
+  
+  endif;
+  
   global $post;
     if(is_singular()) {
 
       $title = get_the_title();
 
       if(has_post_thumbnail($post->ID)) {
+        
       $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'social-media');
       $img = $img_src[0];
-      } else {
-      $default = get_field('social_image', 'options');
-      $img = $default['sizes']['social-media'];
+      
       }
 
       if(has_excerpt()) {
@@ -99,29 +141,21 @@ function blockhaus_opengraph() {
     } elseif(is_archive() && ! is_search()) {
 
       $title = get_the_archive_title();
-      $default = get_field('social_image', 'options');
-      $img = $default['sizes']['social-media'];
       $excerpt = get_bloginfo('description');
 
     } elseif ( is_home() && ! is_front_page() ) {
 
       $title = single_post_title('',false);
-      $default = get_field('social_image', 'options');
-      $img = $default['sizes']['social-media'];
       $excerpt = get_bloginfo('description');
 
     } elseif(is_search()) {
 
       $title = get_bloginfo('title') . ' search results for keyword ' . get_search_query();
-      $default = get_field('social_image', 'options');
-      $img = $default['sizes']['social-media'];
       $excerpt = get_bloginfo('description');
 
     } else {
 
       $title = get_bloginfo('title');
-      $default = get_field('social_image', 'options');
-      $img = $default['sizes']['social-media'];
       $excerpt = get_bloginfo('description');
 
     }
@@ -138,6 +172,7 @@ function blockhaus_opengraph() {
     <meta name="twitter:title" content="<?php echo $title; ?>" />
     <meta name="twitter:description" content="<?php echo $excerpt; ?>" />
     <meta name="twitter:image" content="<?php echo $img; ?>" />
+   
     <?php
   }
 

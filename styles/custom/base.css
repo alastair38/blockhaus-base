@@ -38,6 +38,14 @@ main {
   @apply bg-highlight;
 }
 
+details[open] svg {
+  @apply rotate-90 duration-500;
+}
+
+details svg {
+  @apply duration-200;
+}
+
 /* Navigation fix for Safari */
 
 #primary-menu li {
@@ -45,5 +53,42 @@ main {
 }
 
 #primary-menu li a {
-  @apply text-offset hover:text-neutral-dark-900 focus:text-neutral-dark-900;
+  @apply hover:text-neutral-dark-100 focus:text-neutral-dark-100 text-sm;
+}
+
+hr {
+  @apply border-black;
+}
+
+/* Tweak to post-template gap spacing as this cannot be adjusted yet via theme.json */
+
+.wp-block-post-template.is-flex-container {
+  @apply gap-12;
+}
+
+.wp-block-post-template.is-flex-container.is-flex-container.columns-2 > li {
+  width: calc(50% - 1.5rem);
+}
+
+.wp-block-post-template.is-flex-container.is-flex-container.columns-3 > li {
+  width: calc(33.33333% - 3rem);
+}
+
+.blockhaus-hero .wp-block-post-featured-image img {
+  @apply aspect-hero;
+}
+
+blockquote {
+  position: relative;
+  z-index: 1;
+}
+
+blockquote:before {
+  content: '';
+
+  @apply inline-block border-accent-default border-double border-4 outline-4 outline-accent-default outline-double outline-offset-2 rounded-full absolute top-2 left-4 -z-0 aspect-square h-1/2 opacity-10;
+}
+
+ul.wp-block-post-template li {
+  margin-block-start: 0;
 }

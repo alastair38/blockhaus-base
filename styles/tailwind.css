@@ -2,6 +2,7 @@
 @import '/custom/base.css';
 @import 'tailwindcss/components';
 @import '/custom/components.css';
+@import '/custom/comments.css';
 @import '/custom/wpforms.css';
 @import '/custom/cookies.css';
 @import 'tailwindcss/utilities';

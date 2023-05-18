@@ -20,13 +20,15 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area space-y-6">
+	
+<div class="border mt-12 p-12 space-y-6 rounded-md">
 
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<h2 class="comments-title font-black">
 			<?php
 			$blockhaus_comment_count = get_comments_number();
 			if ( '1' === $blockhaus_comment_count ) {
@@ -48,7 +50,7 @@ if ( post_password_required() ) {
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
+		<ol class="comment-list space-y-6">
 			<?php
 			wp_list_comments(
 				array(
@@ -73,5 +75,5 @@ if ( post_password_required() ) {
 
 	comment_form();
 	?>
-
+</div>
 </div><!-- #comments -->

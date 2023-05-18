@@ -1,0 +1,186 @@
+/*=====================================
+ Comment Template CSS
+========================================*/
+
+article.comment-body {
+  @apply py-2;
+}
+
+.comments-content,
+.comments-content #comments {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 500ms;
+  overflow: hidden;
+}
+
+.comments-panel-trigger[aria-expanded='true'] > svg {
+  @apply rotate-90 duration-300;
+}
+
+.comments-panel-trigger[aria-expanded='false'] > svg {
+  @apply rotate-0 duration-300;
+}
+
+.comments-content[aria-hidden='false'] {
+  grid-template-rows: 1fr;
+  overflow: hidden;
+}
+
+.comment-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.comment-meta {
+  @apply mb-5 text-sm;
+}
+
+.comment-author.vcard {
+  position: relative;
+  padding-left: 50px;
+}
+
+.comment-author.vcard img {
+  @apply absolute left-0 top-1 rounded-full;
+}
+
+.comment-metadata {
+  margin-left: 50px;
+}
+
+.comments-area table {
+  border-left: 1px solid #dddd;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.comments-area table td,
+.comments-area table th {
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+}
+
+.comments-area th {
+  background: #278cc1;
+  color: #fff;
+}
+
+.comments-area dd {
+  margin-bottom: 15px;
+}
+
+.comments-area .comments-content ul,
+.comments-area .comments-content ol {
+  padding-left: 15px;
+}
+
+.comments-area .comment-content ul,
+.comments-area .comment-content ol {
+  padding-left: 15px;
+}
+
+.comment-reply-link {
+  @apply rounded-md text-sm inline-block w-fit bg-secondary text-white px-4 py-1 hover:ring-2 focus:ring-2 ring-offset-2 ring-transparent hover:ring-secondary focus:ring-secondary;
+}
+
+.comment-edit-link {
+  @apply rounded-full inline-block w-fit bg-neutral-dark-500 text-tiny text-white px-2 hover:bg-secondary focus:bg-secondary ml-2;
+}
+
+.comment-form-comment label {
+  @apply text-sm;
+}
+
+.comment-list li.comment {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 30px;
+}
+
+.comment-metadata {
+  @apply text-tiny;
+}
+
+.comment-reply-link {
+  margin-top: 10px;
+}
+
+#reply-title {
+  @apply font-black;
+}
+
+.comment-list li ol.children {
+  padding-left: 50px;
+  margin: 0;
+  list-style: none;
+  margin-top: 25px;
+}
+
+.comment-list li ol.children ol.children {
+  @apply pl-5;
+}
+
+.comment-list li.comment:last-child {
+  @apply border-b-0 pb-0 mb-0;
+}
+
+.comment-respond,
+.comment-form {
+  @apply space-y-6;
+}
+
+.comment-respond {
+  @apply p-8 mt-8 bg-neutral-light-100 relative;
+}
+
+.logged-in-as {
+  @apply w-fit absolute right-8 top-8 text-sm px-3 py-1 rounded-full bg-white;
+}
+
+.logged-in-as a,
+.logged-in-as .required-field-message {
+  @apply pl-1;
+}
+
+.comment-notes {
+  @apply mb-10;
+}
+
+.comment-form label {
+  @apply block;
+}
+
+.comment-form input,
+.comment-form textarea {
+  @apply w-full;
+}
+
+.comment-form input[type='submit'] {
+  @apply rounded-md text-sm inline-block w-fit bg-secondary text-white px-6 py-2 hover:ring-2 focus:ring-2 ring-offset-2 ring-transparent hover:ring-secondary focus:ring-secondary;
+}
+
+#wp-comment-cookies-consent {
+  @apply w-6 h-6 rounded-full text-accent-default;
+}
+
+form {
+  @apply space-y-6;
+}
+
+form p {
+  @apply space-y-3 text-sm;
+}
+
+.comment-form-cookies-consent {
+  @apply flex gap-4 items-center py-6 space-y-0;
+}
+
+form#commentform p input[type='text'],
+form#commentform p input[type='email'],
+form#commentform p input[type='url'],
+form#commentform p textarea {
+  @apply rounded border border-neutral-light-900;
+}

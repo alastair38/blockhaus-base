@@ -15,7 +15,7 @@
 		<?php the_title( '<h1>', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<div>
+	<div class="space-y-24">
 		<?php
 		the_content();
 		?>

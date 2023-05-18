@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: [
@@ -6,9 +6,22 @@ module.exports = {
     './**/*.php',
     './js/*.js',
     './functions.php',
-    '../../plugins/blockhaus-functionality/includes/blocks/**/*.php',
+    '../../plugins/blockhaus-functionality-base/includes/blocks/**/*.php',
   ],
-  safelist: ['rounded-blob', 'object-right', 'object-left', 'object-center'],
+  safelist: [
+    'rounded-blob',
+    'object-right',
+    'object-left',
+    'object-center',
+    'aspect-video',
+    'aspect-hero',
+    'gap-x-12',
+    'gap-y-6',
+    'p-0',
+    'ring-offset-accent-default',
+    'grid-cols-fill',
+    'sticky',
+  ],
   theme: {
     fontFamily: {
       sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
@@ -62,6 +75,9 @@ module.exports = {
         'waves-alt':
           "url('/wp-content/themes/blockhaus/assets/images/backgrounds/waves-45.svg')",
       },
+      aspectRatio: {
+        hero: '16 / 11',
+      },
       borderRadius: {
         blob: '61% 39% 36% 64% / 47% 50% 50% 53%',
       },
@@ -70,7 +86,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         // Complex site-specific column configuration
-        header: '12.5% 1fr 12.5%',
+        fill: 'repeat(auto-fit, minmax(300px, 1fr))',
       },
       typography: {
         DEFAULT: {
@@ -90,9 +106,9 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    // require('@tailwindcss/typography'),
     require('@tailwindcss/forms')({
       strategy: 'base', // only generate global styles
     }),
   ],
-}
+};

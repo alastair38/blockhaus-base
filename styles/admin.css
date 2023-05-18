@@ -46,6 +46,15 @@ bg-accent-tertiary*/
   padding: 0.25rem 0.75rem;
 }
 
+.acf-field > .acf-label > label {
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+a.acf-button.button {
+  margin-left: 1rem;
+}
+
 .color-switcher .selected input[type='radio'][value='offset']:after {
   background-color: var(--wp--preset--color--offset);
 }
@@ -322,4 +331,15 @@ li#wp-admin-bar-my-account .ab-item .display-name,
 
 #wpbody-content #dashboard-widgets .postbox-container {
   width: 100% !important;
+}
+
+.editor-styles-wrapper button.is-primary {
+  background-color: var(
+    --wp-components-color-accent,
+    var(--wp-admin-theme-color, #007cba)
+  );
+}
+
+.editor-styles-wrapper .blockhaus-hero .wp-block-post-featured-image img {
+  aspect-ratio: auto;
 }

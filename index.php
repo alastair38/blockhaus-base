@@ -14,31 +14,29 @@
 
 get_header();
 
-$postTypeMeta = get_field(get_post_type() . '_page_settings', "options");
 
 ?>
 
-	<main class="main-content lg:pb-20">
+	<main class="main-content w-11/12 mx-auto mt-12">
 
-		<?php get_template_part('components/full-width-header-alt'); ?>
+		
 
 		<?php
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) :?>
 
-				<div class="grid my-6 lg:my-12 rounded-md w-11/12 md:w-3/4 mx-auto grid-cols-1 md:grid-cols-3 gap-6">
-
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+				<?php get_template_part('components/archive-header'); ?>
+				
+				
+				
 
 				<?php
 				
 			endif;
 
-			if($postTypeMeta['page_description']):?>
-
-				<div class="col-span-full"><?php echo $postTypeMeta['page_description'];?></div>
-	
-				<?php endif;
+		
 
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -49,7 +47,7 @@ $postTypeMeta = get_field(get_post_type() . '_page_settings', "options");
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_navigation(['aria_label' => __( 'More content' ), 'class' => 'col-span-full']);
 
 		else :
 

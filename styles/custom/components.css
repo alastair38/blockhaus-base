@@ -244,31 +244,33 @@ iframe {
   @apply bg-transparent;
 }
 
-.blog article img {
-  aspect-ratio: 4/3;
-}
-
 /* POST NAVIGATION STYLES */
 
-.post-navigation .nav-links {
-  @apply w-11/12 md:w-3/4 mx-auto my-8 flex justify-between;
+.post-navigation .nav-links,
+.navigation .nav-links {
+  @apply my-8 flex justify-between;
 }
 
 .nav-previous a,
 .nav-next a {
-  @apply flex items-center text-neutral-dark-900 hover:translate-x-8 transition-all duration-150;
+  @apply flex items-center text-neutral-dark-900 text-sm bg-accent-default rounded-full py-1 ring-2 ring-offset-2 ring-transparent transition-all duration-150;
 }
 
 .nav-next a {
-  @apply hover:translate-x-2;
+  @apply pl-3 pr-1 hover:ring-accent-default focus:ring-accent-default;
 }
 
 .nav-previous a {
-  @apply hover:-translate-x-2;
+  @apply pl-1 pr-3 hover:ring-accent-default focus:ring-accent-default;
 }
 
 .nav-next {
   @apply ml-auto;
+}
+
+.navigation .nav-previous a,
+.navigation .nav-next a {
+  @apply px-3;
 }
 
 /* MOBILE NAVIGATION */
@@ -283,10 +285,29 @@ iframe {
   transition: 250ms;
 }
 
+/* STICKY HEADER */
+
+header.toggleClass svg.logo {
+  height: 2rem;
+  transition: 500ms;
+}
+
+header svg.logo {
+  transition: 500ms;
+}
+
+.main-header {
+  position: sticky;
+}
+
 /* SOCIAL LNKS BLOCKS */
 
-.wp-block-social-links.is-style-logos-only .wp-social-link {
+/* .wp-block-social-links.is-style-logos-only .wp-social-link {
   @apply text-secondary;
+} */
+
+.wp-block-social-links.is-style-logos-only .wp-social-link svg {
+  @apply w-6 h-6 md:h-8 md:w-8;
 }
 
 /* LOGIN FORM */
@@ -308,17 +329,17 @@ form#loginform label {
 }
 
 form#loginform [type='checkbox'] {
-  @apply text-accent-default rounded-full w-6 h-6 focus:ring-accent-default;
+  @apply text-secondary rounded-full w-6 h-6 focus:ring-secondary;
 }
 
 form#loginform [type='password'] {
-  @apply py-1 bg-white rounded-full border border-neutral-light-500;
+  @apply py-1 bg-white rounded-full border border-neutral-light-500 focus:ring-2 ring-offset-2 ring-transparent focus:ring-secondary;
 }
 
 form#loginform [type='text'] {
-  @apply bg-white rounded-full border border-neutral-light-500;
+  @apply bg-white rounded-full border border-neutral-light-500 focus:ring-2 ring-offset-2 ring-transparent focus:ring-secondary;
 }
 
 form#loginform input#wp-submit {
-  @apply bg-offset py-1 px-2 shadow-retro border border-current cursor-pointer;
+  @apply rounded-md inline-block w-fit bg-secondary text-white px-6 py-2 hover:ring-2 focus:ring-2 ring-offset-2 ring-transparent hover:ring-secondary focus:ring-secondary cursor-pointer;
 }

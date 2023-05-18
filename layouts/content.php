@@ -9,12 +9,14 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="p-6 bg-primary border border-neutral-light-500 flex flex-col gap-4 rounded-md shadow-md break-words">
+<article id="post-<?php the_ID(); ?>" class="flex flex-col space-y-6 break-words">
 <?php 
 if(('project' === get_post_type()) || ('post' === get_post_type())):
-blockhaus_post_thumbnail('landscape'); 
+blockhaus_post_thumbnail('blog'); 
 endif;
 ?>
+
+<div class="space-y-6">
 	<header class="entry-header">
 		<?php
 		
@@ -30,7 +32,7 @@ endif;
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
+<hr>
 	<div class="entry-content">
 		<?php
 
@@ -60,4 +62,5 @@ endif;
 		<?php get_template_part('components/permalink'); ?>
 		
 	</footer><!-- .entry-footer -->
+		</div>
 </article><!-- #post-<?php the_ID(); ?> -->

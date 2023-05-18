@@ -22,10 +22,11 @@
     "autoprefixer": "^10.4.7",
     "dir-archiver": "^1.1.1",
     "node-sass": "^7.0.1",
-    "postcss": "^8.4.13",
+    "postcss": "^8.4.23",
+    "postcss-cli": "^10.1.0",
     "postcss-import": "^14.1.0",
     "rtlcss": "^3.5.0",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.3.2"
   },
   "rtlcssConfig": {
     "options": {
@@ -41,9 +42,9 @@
     "map": false
   },
   "scripts": {
-    "dev": "tailwindcss -i ./styles/tailwind.css -o ./styles/style.css --postcss",
-    "watch": "tailwindcss -i ./styles/tailwind.css -o ./styles/style.css --postcss --watch",
-    "production": "tailwindcss -i ./styles/tailwind.css -o ./styles/style.css --postcss --minify"
+    "dev": "tailwindcss -i ./styles/tailwind.css -o ./styles/style.css",
+    "watch": "tailwindcss -i ./styles/tailwind.css -o ./styles/style.css --watch",
+    "production": "tailwindcss -i ./styles/tailwind.css -o ./styles/style.css --minify"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.2"

@@ -9,7 +9,7 @@
 
 ?>
 
-<section class="no-results not-found space-y-6">
+<section class="no-results col-span-full not-found space-y-6">
 	<header class="page-header">
 		<h2 class="page-title"><?php esc_html_e( 'Nothing Found', 'blockhaus' ); ?></h2>
 	</header><!-- .page-header -->
